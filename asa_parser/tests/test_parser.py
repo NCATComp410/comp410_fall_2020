@@ -59,3 +59,7 @@ class ParserTest(unittest.TestCase):
 
     def test_startup_config_errors(self):
         self.assertEqual(True, True)
+
+
+    def test_ipsec_stats(self):
+        self.assertEqual(True, True)

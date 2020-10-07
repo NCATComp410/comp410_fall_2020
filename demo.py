@@ -28,5 +28,8 @@ def run_demo():
     print(primary_asa.startup_config_errors())
 
 
+    # ipsec stats
+    print(primary_asa.ipsec_stats())
+
 if __name__ == "__main__":
     run_demo()
