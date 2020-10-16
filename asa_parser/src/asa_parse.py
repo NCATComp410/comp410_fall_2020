@@ -39,11 +39,22 @@ class AsaParser(ShowTech):
         """Parser for show startup-config errors"""
         return json.dumps({'text': self.get_show_section('startup-config errors')})
 
+    def show_tech_support_license(self):
+        """Parser for show tech support license"""
+        return json.dumps({'text': self.get_show_section('tech-support license')})
 
+    def show_cpu_usage(self):
+        """Parser for show cpu usage"""
+        return json.dumps({'text': self.get_show_section('cpu usage')})
+
+    def show_memory_region(self):
+        """Parser for show memory region"""
+        return json.dumps({'text': self.get_show_section('memory region')})
+
+    def show_cpu_detailed(self):
+        """Parser for show cpu detailed"""
+        return json.dumps({'text': self.get_show_section('cpu detailed')})
 
     def ipsec_stats(self):
         """Parser for show ipsec stats"""
         return json.dumps({'stats': self.get_show_section('ipsec stats')})
-
-
-
