@@ -71,3 +71,6 @@ class ParserTest(unittest.TestCase):
 
     def test_cpu_detailed(self):
         self.assertEqual(True,True)
+
+    def test_ipsec_stats(self):
+        self.assertEqual(True, True)
