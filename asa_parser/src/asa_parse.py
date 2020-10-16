@@ -46,3 +46,4 @@ class AsaParser(ShowTech):
         return json.dumps({'stats': self.get_show_section('ipsec stats')})
 
 
+
