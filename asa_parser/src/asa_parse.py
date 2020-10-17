@@ -58,3 +58,7 @@ class AsaParser(ShowTech):
     def ipsec_stats(self):
         """Parser for show ipsec stats"""
         return json.dumps({'stats': self.get_show_section('ipsec stats')})
+    
+    def show_logging_buffered(self):
+        """Parser for show show logging buffered"""
+        return json.dumps({'text': self.get_show_section('show logging buffered')})
