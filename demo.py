@@ -24,6 +24,9 @@ def run_demo():
     print(df['Reason'].value_counts())
     print('Demo Message')
 
+    #show process cpu-hog
+    print(primary_asa.support_cpu_hog())
+
 
 if __name__ == "__main__":
     run_demo()
