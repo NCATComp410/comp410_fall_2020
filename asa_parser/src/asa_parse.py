@@ -14,12 +14,12 @@ class AsaParser(ShowTech):
         """Returns failover history"""
 
         # Initialize variables
-        fh_list = []  # This will hold the failover info
-        timestamp = ''  # Timestamp of the current group information
+        fh_list = []         # This will hold the failover info
+        timestamp = ''       # Timestamp of the current group information
         group_found = False  # Identifies if parser has found a group
 
         # --- show failover history ---
-        for line in self.get_show_section('failover history'):
+        for line in  self.get_show_section('failover history'):
             # Check for a timestamp
             if ' UTC ' in line:
                 timestamp = line
@@ -55,6 +55,9 @@ class AsaParser(ShowTech):
         """Parser for show cpu detailed"""
         return json.dumps({'text': self.get_show_section('cpu detailed')})
 
+    def ipsec_stats(self):
+        """Parser for show ipsec stats"""
+        return json.dumps({'stats': self.get_show_section('ipsec stats')})
     def show_tech_support_detail(self):
         """Parser for show cpu detailed"""
         return json.dumps({'text': self.get_show_section('tech-support detail')})
