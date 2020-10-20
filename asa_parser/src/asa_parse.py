@@ -19,7 +19,7 @@ class AsaParser(ShowTech):
         group_found = False  # Identifies if parser has found a group
 
         # --- show failover history ---
-        for line in  self.get_show_section('failover history'):
+        for line in self.get_show_section('failover history'):
             # Check for a timestamp
             if ' UTC ' in line:
                 timestamp = line
