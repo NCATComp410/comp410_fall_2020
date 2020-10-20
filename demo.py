@@ -42,6 +42,9 @@ def run_demo():
     # ipsec stats
     print(primary_asa.ipsec_stats())
 
+    #show memory
+    print(primary_asa.show_memory())
+
 
 if __name__ == "__main__":
     run_demo()
