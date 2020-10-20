@@ -64,5 +64,5 @@ class AsaParser(ShowTech):
         return json.dumps({'text': self.get_show_section('tech-support detail')})
 
     def show_interface(self):
-        """Paser for show interface"""
+        """Parser for show interface"""
         return json.dumps({'text': self.get_show_section('interface')})
