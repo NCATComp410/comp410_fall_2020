@@ -62,7 +62,3 @@ class AsaParser(ShowTech):
     def show_tech_support_detail(self):
         """Parser for show cpu detailed"""
         return json.dumps({'text': self.get_show_section('tech-support detail')})
-
-    def show_interface(self):
-        """Parser for show interface"""
-        return json.dumps({'text': self.get_show_section('interface')})
