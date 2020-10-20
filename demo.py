@@ -45,5 +45,6 @@ def run_demo():
     # interface
     print(primary_asa.show_interface())
 
+
 if __name__ == "__main__":
     run_demo()
