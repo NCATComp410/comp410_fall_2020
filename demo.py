@@ -39,9 +39,9 @@ def run_demo():
     # memory region
     print(primary_asa.show_memory_region())
 
-
     # ipsec stats
     print(primary_asa.ipsec_stats())
+
 
 if __name__ == "__main__":
     run_demo()
