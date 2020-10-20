@@ -34,3 +34,7 @@ class AsaParser(ShowTech):
                 fh_list.append(fh)
                 group_found = False
         return json.dumps(fh_list)
+
+    def show_interface(self):
+        """Parser for show inteface"""
+        return json.dumps({'text': self.get_show_section('interface')})
