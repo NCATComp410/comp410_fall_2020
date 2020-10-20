@@ -43,5 +43,8 @@ def run_demo():
     # ipsec stats
     print(primary_asa.ipsec_stats())
 
+    # context details
+    print(primary_asa.show_context_details())
+
 if __name__ == "__main__":
     run_demo()
