@@ -66,3 +66,7 @@ class AsaParser(ShowTech):
     def show_interface(self):
         """Parser for show interface"""
         return json.dumps({'text': self.get_show_section('interface')})
+
+    def show_traffic(self):
+        """Parser for show traffic"""
+        return json.dumps({'text': self.get_show_section('traffic')})

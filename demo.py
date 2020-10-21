@@ -45,6 +45,8 @@ def run_demo():
     # interface
     print(primary_asa.show_interface())
 
+    # traffic
+    print(primary_asa.show_traffic())
 
 if __name__ == "__main__":
     run_demo()
