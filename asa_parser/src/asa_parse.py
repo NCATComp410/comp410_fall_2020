@@ -19,7 +19,7 @@ class AsaParser(ShowTech):
         group_found = False  # Identifies if parser has found a group
 
         # --- show failover history ---
-        for line in  self.get_show_section('failover history'):
+        for line in self.get_show_section('failover history'):
             # Check for a timestamp
             if ' UTC ' in line:
                 timestamp = line
@@ -66,3 +66,11 @@ class AsaParser(ShowTech):
     def show_context_details(self):
         """Parser for show context details"""
         return json.dumps({'stats': self.get_show_section('context details')})
+
+    def show_interface(self):
+        """Parser for show interface"""
+        return json.dumps({'text': self.get_show_section('interface')})
+
+    def show_traffic(self):
+        """Parser for show traffic"""
+        return json.dumps({'text': self.get_show_section('traffic')})
