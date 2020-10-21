@@ -42,11 +42,15 @@ def run_demo():
     # ipsec stats
     print(primary_asa.ipsec_stats())
 
+    # context details
+    print(primary_asa.show_context_details())
+
     # interface
     print(primary_asa.show_interface())
 
     # traffic
     print(primary_asa.show_traffic())
+
 
 if __name__ == "__main__":
     run_demo()
