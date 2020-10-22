@@ -48,7 +48,7 @@ class AsaParser(ShowTech):
         return json.dumps({'text': self.get_show_section('cpu usage')})
 
     def show_memory_region(self):
-        """Parser for show_memory.txt region"""
+        """Parser for show_memory region"""
         return json.dumps({'text': self.get_show_section('memory region')})
 
     def show_cpu_detailed(self):
@@ -62,6 +62,10 @@ class AsaParser(ShowTech):
     def show_memory(self):
         """Parser for show memory"""
         return json.dumps({'text': self.get_show_section('memory')})
+
+    def show_memory_detail(self):
+        """Parsesr for show memory detail"""
+        return json.dumps({'text': self.get_show_section('memory detail')})
 
     def show_tech_support_detail(self):
         """Parser for show cpu detailed"""
