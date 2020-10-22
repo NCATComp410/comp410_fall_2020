@@ -39,6 +39,9 @@ def run_demo():
     # memory region
     print(primary_asa.show_memory_region())
 
+    # show process
+    print(primary_asa.show_memory_region())
+
 
 if __name__ == "__main__":
     run_demo()

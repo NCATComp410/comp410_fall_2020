@@ -54,3 +54,8 @@ class AsaParser(ShowTech):
     def show_cpu_detailed(self):
         """Parser for show cpu detailed"""
         return json.dumps({'text': self.get_show_section('cpu detailed')})
+
+    def show_process(self):
+        """"Parser for show process"""
+        return json.dumps({'text': self.get_show_section('show process')})
+
