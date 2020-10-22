@@ -45,6 +45,12 @@ def run_demo():
     # context details
     print(primary_asa.show_context_details())
 
+    # interface
+    print(primary_asa.show_interface())
+
+    # traffic
+    print(primary_asa.show_traffic())
+
     #show memory
     print(primary_asa.show_memory())
 
