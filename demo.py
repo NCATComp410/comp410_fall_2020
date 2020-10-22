@@ -51,6 +51,12 @@ def run_demo():
     # traffic
     print(primary_asa.show_traffic())
 
+    #show memory
+    print(primary_asa.show_memory())
+
+    #show memory detail
+    print(primary_asa.show_memory_detail())
+
 
 if __name__ == "__main__":
     run_demo()

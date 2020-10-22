@@ -77,3 +77,6 @@ class ParserTest(unittest.TestCase):
 
     def test_context_details(self):
         self.assertEqual(True, True)
+
+    def test_memory(self):
+        self.assertEqual(True, True)
