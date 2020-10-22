@@ -39,8 +39,23 @@ def run_demo():
     # memory region
     print(primary_asa.show_memory_region())
 
-    # show process
-    print(primary_asa.show_memory_region())
+    # ipsec stats
+    print(primary_asa.ipsec_stats())
+
+    # context details
+    print(primary_asa.show_context_details())
+
+    # interface
+    print(primary_asa.show_interface())
+
+    # traffic
+    print(primary_asa.show_traffic())
+
+    #show memory
+    print(primary_asa.show_memory())
+
+    #show memory detail
+    print(primary_asa.show_memory_detail())
 
 
 if __name__ == "__main__":

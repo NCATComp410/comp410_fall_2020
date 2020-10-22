@@ -14,8 +14,8 @@ class AsaParser(ShowTech):
         """Returns failover history"""
 
         # Initialize variables
-        fh_list = []  # This will hold the failover info
-        timestamp = ''  # Timestamp of the current group information
+        fh_list = []         # This will hold the failover info
+        timestamp = ''       # Timestamp of the current group information
         group_found = False  # Identifies if parser has found a group
 
         # --- show failover history ---
@@ -48,14 +48,37 @@ class AsaParser(ShowTech):
         return json.dumps({'text': self.get_show_section('cpu usage')})
 
     def show_memory_region(self):
-        """Parser for show memory region"""
+        """Parser for show_memory region"""
         return json.dumps({'text': self.get_show_section('memory region')})
 
     def show_cpu_detailed(self):
         """Parser for show cpu detailed"""
         return json.dumps({'text': self.get_show_section('cpu detailed')})
 
-    def show_process(self):
-        """"Parser for show process"""
-        return json.dumps({'text': self.get_show_section('show process')})
+    def ipsec_stats(self):
+        """Parser for show ipsec stats"""
+        return json.dumps({'stats': self.get_show_section('ipsec stats')})
 
+    def show_memory(self):
+        """Parser for show memory"""
+        return json.dumps({'text': self.get_show_section('memory')})
+
+    def show_memory_detail(self):
+        """Parsesr for show memory detail"""
+        return json.dumps({'text': self.get_show_section('memory detail')})
+
+    def show_tech_support_detail(self):
+        """Parser for show cpu detailed"""
+        return json.dumps({'text': self.get_show_section('tech-support detail')})
+
+    def show_context_details(self):
+        """Parser for show context details"""
+        return json.dumps({'stats': self.get_show_section('context details')})
+
+    def show_interface(self):
+        """Parser for show interface"""
+        return json.dumps({'text': self.get_show_section('interface')})
+
+    def show_traffic(self):
+        """Parser for show traffic"""
+        return json.dumps({'text': self.get_show_section('traffic')})
