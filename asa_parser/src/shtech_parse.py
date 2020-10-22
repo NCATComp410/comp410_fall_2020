@@ -1,6 +1,22 @@
+import re
+
+
 def match_section(line, section):
     """Returns true if line matches section"""
-    if line.startswith('----') and '---- ' + section in line:
+    # match a line that begins with 8 or 18 dashes
+    # followed by a space
+    # following by the section name
+    # that ends with 8 or 18 dashes
+    if re.search(r'^[-]{8,18} ' + section + r' [-]{8,18}$', line):
+        return True
+    return False
+
+
+def is_section(line, sec_heading):
+    """Returns true if line matches any potentially valid section"""
+    # match a line that begins with 8 or 18 dashes
+    # followed by a valid section title
+    if re.search(r'^[-]{8,18} '+sec_heading+' ', line):
         return True
     return False
 
@@ -18,16 +34,17 @@ class ShowTech:
         save_line = False
         for line in self.shtech:
             # Stop at the next section heading (if found)
-            if match_section(line, sec_heading):
+            if is_section(line, sec_heading):
                 save_line = False
             # Save all the lines in this section so we can return them
             if save_line:
                 # Don't include blank lines
                 if line != '':
                     text.append(line)
-            # If the target section has found start saving lines
-            if match_section(line, sec_heading+' '+sec_name):
-                save_line = True
+            else:
+                # If the target section has found start saving lines
+                if match_section(line, sec_heading+' '+sec_name):
+                    save_line = True
         return text
 
     def get_show_section(self, sec_name):
