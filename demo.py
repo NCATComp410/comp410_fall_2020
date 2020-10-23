@@ -57,8 +57,8 @@ def run_demo():
     #show memory detail
     print(primary_asa.show_memory_detail())
 
-	#show logging buffered
-	print(primary_asa.show_logging_buffered())
+    #show logging buffered
+    print(primary_asa.show_logging_buffered())
 
 if __name__ == "__main__":
     run_demo()
