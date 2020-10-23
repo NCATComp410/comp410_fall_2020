@@ -58,7 +58,22 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(expected, asa.failover_history())
 
     def test_startup_config_errors(self):
-        self.assertEqual(True, True)
+        # create a new text file in the tests directory called show_startup_config_errors.txt
+        # this file will contain only the "show startup-config errors" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_startup_config_errors.txt'))
+
+        # execute the parser and get the result
+        # for now this will simply be a list of all the text in the section
+        # the return is in JSON format
+        result = asa.startup_config_errors()
+
+        # make sure the text section appears in the JSON return
+        self.assertIn('"text":', result)
+
+        # check to make sure the first line of the show section is present in the JSON return
+        self.assertIn('["Reading from flash..."', result)
 
     def test_tech_support_license(self):
         self.assertEqual(True, True)
