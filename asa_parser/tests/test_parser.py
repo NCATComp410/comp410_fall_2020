@@ -75,12 +75,11 @@ class ParserTest(unittest.TestCase):
     def test_ipsec_stats(self):
         self.assertEqual(True, True)
 
-
     def test_context_details(self):
         self.assertEqual(True, True)
 
     def test_memory(self):
         self.assertEqual(True, True)
 
-	def show_logging_buffered(self):
-		self.assertEqual(True, True)
+    def show_logging_buffered(self):
+        self.assertEqual(True, True)

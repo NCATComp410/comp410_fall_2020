@@ -83,6 +83,6 @@ class AsaParser(ShowTech):
         """Parser for show traffic"""
         return json.dumps({'text': self.get_show_section('traffic')})
 	
-	def show_logging_buffered(self):
-		"""Parser for show show logging buffered"""
-		return json.dumps({'text': self.get_show_section('logging buffered')}
+    def show_logging_buffered(self):
+	    """Parser for show show logging buffered"""
+	    return json.dumps({'text': self.get_show_section('logging buffered')})
