@@ -57,6 +57,9 @@ class ParserTest(unittest.TestCase):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_failover_history.txt'))
         self.assertEqual(expected, asa.failover_history())
 
+    def test_support_cpu_hog(self):
+        self.assertEqual(True, True)
+        
     def test_startup_config_errors(self):
         # create a new text file in the tests directory called show_startup_config_errors.txt
         # this file will contain only the "show startup-config errors" section from the main

@@ -35,6 +35,10 @@ class AsaParser(ShowTech):
                 group_found = False
         return json.dumps(fh_list)
 
+    def support_cpu_hog(self):
+        """Parser for process cpu-hog"""
+        return json.dumps({'text': self.get_show_section('process cpu-hog')})
+        
     def startup_config_errors(self):
         """Parser for show startup-config errors"""
         return json.dumps({'text': self.get_show_section('startup-config errors')})
