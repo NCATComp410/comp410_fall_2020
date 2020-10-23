@@ -82,4 +82,3 @@ class AsaParser(ShowTech):
     def show_traffic(self):
         """Parser for show traffic"""
         return json.dumps({'text': self.get_show_section('traffic')})
->>>>>>> 9a2e308902185a60503f966a5a865444d668c9a0
