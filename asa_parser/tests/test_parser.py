@@ -57,10 +57,9 @@ class ParserTest(unittest.TestCase):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_failover_history.txt'))
         self.assertEqual(expected, asa.failover_history())
 
-<<<<<<< HEAD
     def test_support_cpu_hog(self):
         self.assertEqual(True, True)
-=======
+        
     def test_startup_config_errors(self):
         self.assertEqual(True, True)
 
@@ -84,4 +83,3 @@ class ParserTest(unittest.TestCase):
 
     def test_memory(self):
         self.assertEqual(True, True)
->>>>>>> upstream/dev
