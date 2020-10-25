@@ -99,5 +99,8 @@ class ParserTest(unittest.TestCase):
     def test_memory(self):
         self.assertEqual(True, True)
 
+    def test_show_kernel_process(self):
+        self.assertEqual(True, True)
+
     def show_logging_buffered(self):
         self.assertEqual(True, True)
