@@ -60,11 +60,17 @@ def run_demo():
     #show memory detail
     print(primary_asa.show_memory_detail())
 
+
+    #show process
+    print(primary_asa.show_process())
+
+
     #show logging buffered
     print(primary_asa.show_logging_buffered())
 
     #show kernel process
     print(primary_asa.show_kernel_process())
+
 
 if __name__ == "__main__":
     run_demo()
