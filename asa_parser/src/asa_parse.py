@@ -35,6 +35,10 @@ class AsaParser(ShowTech):
                 group_found = False
         return json.dumps(fh_list)
 
+    def support_cpu_hog(self):
+        """Parser for process cpu-hog"""
+        return json.dumps({'text': self.get_show_section('process cpu-hog')})
+        
     def startup_config_errors(self):
         """Parser for show startup-config errors"""
         return json.dumps({'text': self.get_show_section('startup-config errors')})
@@ -83,6 +87,16 @@ class AsaParser(ShowTech):
         """Parser for show traffic"""
         return json.dumps({'text': self.get_show_section('traffic')})
 
-    def test_show_process(self):
+
+    def show_process(self):
         """Parser for show process"""
         return json.dumps({'text': self.get_show_section('process')})
+
+	
+    def show_logging_buffered(self):
+	    """Parser for show show logging buffered"""
+	    return json.dumps({'text': self.get_show_section('logging buffered')})
+
+    def show_kernel_process(self):
+        """Parser for show kernel process"""
+        return json.dumps({'text': self.get_show_section('kernel process')})
