@@ -25,7 +25,7 @@ def run_demo():
     print('Demo Message')
 
     #show process cpu-hog
-    print(primary_asa.support_cpu_hog())
+    print(primary_asa.show_process_cpu_hog())
 
     # startup-config errors
     print(primary_asa.startup_config_errors())
