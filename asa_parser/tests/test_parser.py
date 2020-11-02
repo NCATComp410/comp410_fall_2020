@@ -59,7 +59,7 @@ class ParserTest(unittest.TestCase):
 
     def test_show_process_cpu_hog(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process_cpu_hog.txt'))
-        result = asa.startup_config_errors()
+        result = asa.show_process_cpu_hog()
         self.assertIn('"text":', result)
         self.assertIn('["Hardware:   FPR-2130"', result)
 
