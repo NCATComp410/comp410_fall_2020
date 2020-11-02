@@ -58,7 +58,12 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(expected, asa.failover_history())
 
     def test_show_process_cpu_hog(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process_cpu_hog.txt'))
+        result = asa.startup_config_errors()
+        self.assertIn('"text":', result)
+        self.assertIn('["Hardware:   FPR-2130"', result)
+
+
         
     def test_startup_config_errors(self):
         # create a new text file in the tests directory called show_startup_config_errors.txt
