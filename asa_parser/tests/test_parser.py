@@ -90,7 +90,10 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_memory_region(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
+        result = asa.show_memory_region()
+        self.assertIn('"text":', result)
+        self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
         self.assertEqual(True,True)
