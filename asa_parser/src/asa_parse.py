@@ -14,7 +14,7 @@ class AsaParser(ShowTech):
         """Returns failover history"""
 
         # Initialize variables
-        fh_list = []  # This will hold the failover info
+        fh_list = []    # This will hold the failover info
         timestamp = ''  # Timestamp of the current group information
         group_found = False  # Identifies if parser has found a group
 
