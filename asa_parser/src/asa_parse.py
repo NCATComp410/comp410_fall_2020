@@ -41,7 +41,31 @@ class AsaParser(ShowTech):
 
     def startup_config_errors(self):
         """Parser for show startup-config errors"""
-        return json.dumps({'text': self.get_show_section('startup-config errors')})
+        # return json structure
+        config_errors = []
+
+        for line in self.get_show_section('startup-config errors'):
+            # !! MIO module heartbeat failure detected
+            if line.startswith('!! '):
+                errs = {'CriticalError': line.split('!! ')[1]}
+                config_errors.append(errs)
+
+            # INFO: Admin context is required to get the interfaces
+            if line.startswith('INFO: '):
+                info = {'Info': line.split('INFO: ')[1]}
+                config_errors.append(info)
+
+            # *** Output from config line 166, "arp rate-limit 32768"
+            if line.startswith('*** '):
+                stars = {'StarInfo': line.split('*** ')[1]}
+                config_errors.append(stars)
+
+            # WARNING: No 'anyconnect image' commands have been
+            if line.startswith('WARNING:'):
+                warn = {'Warning': line.split('WARNING: ')[1]}
+                config_errors.append(warn)
+
+        return json.dumps(config_errors)
 
     def show_tech_support_license(self):
         """Parser for show tech support license"""

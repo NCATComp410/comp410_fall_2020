@@ -63,8 +63,6 @@ class ParserTest(unittest.TestCase):
         self.assertIn('"text":', result)
         self.assertIn('["Hardware:   FPR-2130"', result)
 
-
-        
     def test_startup_config_errors(self):
         # create a new text file in the tests directory called show_startup_config_errors.txt
         # this file will contain only the "show startup-config errors" section from the main
@@ -78,10 +76,13 @@ class ParserTest(unittest.TestCase):
         result = asa.startup_config_errors()
 
         # make sure the text section appears in the JSON return
-        self.assertIn('"text":', result)
+        self.assertIn('CriticalError', result)
 
-        # check to make sure the first line of the show section is present in the JSON return
-        self.assertIn('["Reading from flash..."', result)
+        self.assertIn('Info', result)
+
+        self.assertIn('StarInfo', result)
+
+        self.assertIn('Warning', result)
 
     def test_tech_support_license(self):
         self.assertEqual(True, True)
