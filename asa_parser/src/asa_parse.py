@@ -14,8 +14,8 @@ class AsaParser(ShowTech):
         """Returns failover history"""
 
         # Initialize variables
-        fh_list = []  # This will hold the failover info
-        timestamp = ''  # Timestamp of the current group information
+        fh_list = []         # This will hold the failover info
+        timestamp = ''       # Timestamp of the current group information
         group_found = False  # Identifies if parser has found a group
 
         # --- show failover history ---
@@ -87,9 +87,11 @@ class AsaParser(ShowTech):
         """Parser for show traffic"""
         return json.dumps({'text': self.get_show_section('traffic')})
 
+
     def show_process(self):
         """Parser for show process"""
         return json.dumps({'text': self.get_show_section('process')})
+
 
     def show_logging_buffered(self):
         """Parser for show show logging buffered"""
