@@ -102,7 +102,10 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_memory(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
+        result = asa.show_memory()
+        self.assertIn('"text":', result)
+        self.assertIn('["Free memory:        5318377472 bytes (34%)"', result)
 
     def test_show_process(self):
         self.assertEqual(True, True)
