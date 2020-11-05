@@ -96,7 +96,17 @@ class ParserTest(unittest.TestCase):
         self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
-        self.assertEqual(True,True)
+        # create a new text file in the tests directory called show_cpu_detailed.txt
+        # this file will contain only the "show cpu detailed" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_detailed.txt'))
+
+        result = asa.show_cpu_detailed()
+
+        self.assertIn('"text":', result)
+
+        self.assertIn('["Break down of per-core data path versus control point cpu usage:"', result)
 
     def test_ipsec_stats(self):
         self.assertEqual(True, True)
