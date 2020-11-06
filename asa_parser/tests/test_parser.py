@@ -57,8 +57,31 @@ class ParserTest(unittest.TestCase):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_failover_history.txt'))
         self.assertEqual(expected, asa.failover_history())
 
+    def test_show_process_cpu_hog(self):
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process_cpu_hog.txt'))
+        result = asa.show_process_cpu_hog()
+        self.assertIn('"text":', result)
+        self.assertIn('["Hardware:   FPR-2130"', result)
+
+
+        
     def test_startup_config_errors(self):
-        self.assertEqual(True, True)
+        # create a new text file in the tests directory called show_startup_config_errors.txt
+        # this file will contain only the "show startup-config errors" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_startup_config_errors.txt'))
+
+        # execute the parser and get the result
+        # for now this will simply be a list of all the text in the section
+        # the return is in JSON format
+        result = asa.startup_config_errors()
+
+        # make sure the text section appears in the JSON return
+        self.assertIn('"text":', result)
+
+        # check to make sure the first line of the show section is present in the JSON return
+        self.assertIn('["Reading from flash..."', result)
 
     def test_tech_support_license(self):
         self.assertEqual(True, True)
@@ -70,7 +93,17 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_cpu_detailed(self):
-        self.assertEqual(True,True)
+        # create a new text file in the tests directory called show_cpu_detailed.txt
+        # this file will contain only the "show cpu detailed" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_detailed.txt'))
+
+        result = asa.show_cpu_detailed()
+
+        self.assertIn('"text":', result)
+
+        self.assertIn('["Break down of per-core data path versus control point cpu usage:"', result)
 
     def test_ipsec_stats(self):
         self.assertEqual(True, True)
@@ -78,9 +111,23 @@ class ParserTest(unittest.TestCase):
     def test_context_details(self):
         self.assertEqual(True, True)
 
+
     def test_traffic(self):
         self.assertEqual(True, True)
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
         result = asa.show_traffic()
         self.assertIn('"text":', result)
         self.assertIn('["nlp_int_tap:"', result)
+
+    def test_memory(self):
+        self.assertEqual(True, True)
+
+    def test_show_process(self):
+        self.assertEqual(True, True)
+
+    def test_show_kernel_process(self):
+        self.assertEqual(True, True)
+
+    def show_logging_buffered(self):
+        self.assertEqual(True, True)
+

@@ -1,0 +1,366 @@
+------------------ show process cpu-hog ------------------
+
+Hardware:   FPR-2130
+Cisco Adaptive Security Appliance Software Version 101.1(1)71
+ASLR enabled, text region fff2b5c000-fff70be33c
+
+Process:      fover_parse, NUMHOG: 1, MAXHOG: 8, LASTHOG: 8
+LASTHOG At:   15:48:16 UTC Aug 16 2017
+PC:           0x000000fff3c584d0 (suspend)
+Call stack: 
+
+
+Process:      fover_health_monitoring_thread, NUMHOG: 3, MAXHOG: 11, LASTHOG: 11
+LASTHOG At:   15:48:16 UTC Aug 16 2017
+PC:           0x000000fff3c2b810 (suspend)
+Call stack: 
+
+
+Process:      fover_health_monitoring_thread, NUMHOG: 1, MAXHOG: 11, LASTHOG: 11
+LASTHOG At:   15:48:19 UTC Aug 16 2017
+PC:           0x000000fff3c2b810 (suspend)
+Call stack: 
+
+
+Process:      fover_parse, NUMHOG: 1, MAXHOG: 8, LASTHOG: 8
+LASTHOG At:   15:48:21 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+Call stack: 
+
+
+Process:      fover_health_monitoring_thread, NUMHOG: 1, MAXHOG: 11, LASTHOG: 11
+LASTHOG At:   15:48:24 UTC Aug 16 2017
+PC:           0x000000fff3c2b810 (suspend)
+Call stack: 
+
+
+Process:      fover_fail_check, NUMHOG: 2, MAXHOG: 27, LASTHOG: 27
+LASTHOG At:   15:48:24 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+Call stack: 
+
+
+Process:      fover_fail_check, NUMHOG: 1, MAXHOG: 5, LASTHOG: 5
+LASTHOG At:   15:48:24 UTC Aug 16 2017
+PC:           0x000000fff3c28d04 (suspend)
+Call stack: 
+
+
+Process:      Unicorn Admin Handler, NUMHOG: 1, MAXHOG: 115, LASTHOG: 115
+LASTHOG At:   15:48:26 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+Call stack: 
+
+
+Process:      fover_parse, NUMHOG: 1, MAXHOG: 8, LASTHOG: 8
+LASTHOG At:   15:48:26 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+Call stack: 
+
+
+Process:      fover_parse, NUMHOG: 2, MAXHOG: 8, LASTHOG: 8
+LASTHOG At:   15:48:26 UTC Aug 16 2017
+PC:           0x000000fff3c584d0 (suspend)
+Call stack: 
+
+
+Process:      fover_health_monitoring_thread, NUMHOG: 11, MAXHOG: 27, LASTHOG: 11
+LASTHOG At:   15:48:26 UTC Aug 16 2017
+PC:           0x000000fff3c2b810 (suspend)
+Call stack: 
+
+
+Process:      fover_health_monitoring_thread, NUMHOG: 1, MAXHOG: 11, LASTHOG: 11
+LASTHOG At:   15:48:29 UTC Aug 16 2017
+PC:           0x000000fff3c2b810 (suspend)
+Call stack: 
+
+
+Process:      fover_fail_check, NUMHOG: 1, MAXHOG: 27, LASTHOG: 27
+LASTHOG At:   15:48:29 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+Call stack: 
+
+
+Process:      fover_fail_check, PROC_PC_TOTAL: 1183, MAXHOG: 48, LASTHOG: 5
+LASTHOG At:   15:48:29 UTC Aug 16 2017
+PC:           0x000000fff3c28d04 (suspend)
+
+Process:      fover_fail_check, NUMHOG: 48, MAXHOG: 22, LASTHOG: 5
+LASTHOG At:   15:48:29 UTC Aug 16 2017
+PC:           0x000000fff3c28d04 (suspend)
+Call stack: 
+
+
+Process:      fover_parse, NUMHOG: 1, MAXHOG: 8, LASTHOG: 8
+LASTHOG At:   15:48:31 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+Call stack: 
+
+
+Process:      fover_parse, PROC_PC_TOTAL: 2114, MAXHOG: 18, LASTHOG: 8
+LASTHOG At:   15:48:31 UTC Aug 16 2017
+PC:           0x000000fff3c584d0 (suspend)
+
+Process:      fover_parse, NUMHOG: 7, MAXHOG: 8, LASTHOG: 8
+LASTHOG At:   15:48:31 UTC Aug 16 2017
+PC:           0x000000fff3c584d0 (suspend)
+Call stack: 
+
+
+Process:      fover_health_monitoring_thread, PROC_PC_TOTAL: 2372, MAXHOG: 21, LASTHOG: 11
+LASTHOG At:   15:48:31 UTC Aug 16 2017
+PC:           0x000000fff3c2b810 (suspend)
+
+Process:      fover_health_monitoring_thread, NUMHOG: 1, MAXHOG: 11, LASTHOG: 11
+LASTHOG At:   15:48:31 UTC Aug 16 2017
+PC:           0x000000fff3c2b810 (suspend)
+Call stack: 
+
+
+Process:      fover_parse, PROC_PC_TOTAL: 44646, MAXHOG: 430, LASTHOG: 14
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+
+Process:      ssh, NUMHOG: 1, MAXHOG: 14, LASTHOG: 14
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff34bf8f4 (suspend)
+Call stack: 
+
+
+Process:      ssh, PROC_PC_TOTAL: 1, MAXHOG: 23, LASTHOG: 23
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff3bf87a8 (suspend)
+
+Process:      ssh, NUMHOG: 1, MAXHOG: 23, LASTHOG: 23
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff3bf87a8 (suspend)
+Call stack: 
+
+
+Process:      ssh, PROC_PC_TOTAL: 1, MAXHOG: 14, LASTHOG: 14
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff3d627b0 (suspend)
+
+Process:      ssh, NUMHOG: 1, MAXHOG: 14, LASTHOG: 14
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff3d627b0 (suspend)
+Call stack: 
+
+
+Process:      ssh, NUMHOG: 1, MAXHOG: 6, LASTHOG: 6
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff4b3e86c (suspend)
+Call stack: 
+
+
+Process:      ssh, NUMHOG: 1, MAXHOG: 90, LASTHOG: 90
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff4b3e86c (suspend)
+Call stack: 
+
+
+Process:      ssh, PROC_PC_TOTAL: 3, MAXHOG: 91, LASTHOG: 91
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff4b3e86c (suspend)
+
+Process:      ssh, NUMHOG: 1, MAXHOG: 91, LASTHOG: 91
+LASTHOG At:   15:48:33 UTC Aug 16 2017
+PC:           0x000000fff4b3e86c (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-0-2013, NUMHOG: 2086, MAXHOG: 654, LASTHOG: 4
+LASTHOG At:   15:45:49 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-0-2013, PROC_PC_TOTAL: 57891, MAXHOG: 654, LASTHOG: 10
+LASTHOG At:   15:48:05 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-0-2013, NUMHOG: 8989, MAXHOG: 401, LASTHOG: 10
+LASTHOG At:   15:48:05 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-1-2014, NUMHOG: 2366, MAXHOG: 279, LASTHOG: 6
+LASTHOG At:   15:46:39 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-1-2014, PROC_PC_TOTAL: 57516, MAXHOG: 400, LASTHOG: 12
+LASTHOG At:   15:48:05 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-1-2014, NUMHOG: 8773, MAXHOG: 400, LASTHOG: 12
+LASTHOG At:   15:48:05 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-2-2015, NUMHOG: 2633, MAXHOG: 548, LASTHOG: 5
+LASTHOG At:   15:45:52 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-2-2015, PROC_PC_TOTAL: 57738, MAXHOG: 548, LASTHOG: 17
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-2-2015, NUMHOG: 8709, MAXHOG: 548, LASTHOG: 17
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-3-2016, NUMHOG: 2732, MAXHOG: 547, LASTHOG: 6
+LASTHOG At:   15:45:50 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-3-2016, NUMHOG: 8732, MAXHOG: 546, LASTHOG: 6
+LASTHOG At:   15:46:53 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-3-2016, PROC_PC_TOTAL: 57069, MAXHOG: 547, LASTHOG: 4
+LASTHOG At:   15:46:54 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-4-2017, NUMHOG: 2603, MAXHOG: 282, LASTHOG: 4
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-4-2017, PROC_PC_TOTAL: 56661, MAXHOG: 545, LASTHOG: 20
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-4-2017, NUMHOG: 8307, MAXHOG: 545, LASTHOG: 20
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-5-2018, NUMHOG: 2544, MAXHOG: 547, LASTHOG: 6
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-5-2018, PROC_PC_TOTAL: 56854, MAXHOG: 547, LASTHOG: 16
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-5-2018, NUMHOG: 8397, MAXHOG: 230, LASTHOG: 16
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-6-2019, NUMHOG: 2631, MAXHOG: 296, LASTHOG: 5
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-6-2019, PROC_PC_TOTAL: 57489, MAXHOG: 548, LASTHOG: 14
+LASTHOG At:   15:47:35 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-6-2019, NUMHOG: 8545, MAXHOG: 548, LASTHOG: 14
+LASTHOG At:   15:47:35 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-7-2020, NUMHOG: 2752, MAXHOG: 547, LASTHOG: 5
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-7-2020, PROC_PC_TOTAL: 57557, MAXHOG: 573, LASTHOG: 17
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-7-2020, NUMHOG: 8725, MAXHOG: 399, LASTHOG: 17
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-8-2021, NUMHOG: 2556, MAXHOG: 654, LASTHOG: 7
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-8-2021, PROC_PC_TOTAL: 56548, MAXHOG: 654, LASTHOG: 11
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-8-2021, NUMHOG: 8339, MAXHOG: 400, LASTHOG: 11
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-9-2022, NUMHOG: 2550, MAXHOG: 548, LASTHOG: 4
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-9-2022, PROC_PC_TOTAL: 57922, MAXHOG: 548, LASTHOG: 16
+LASTHOG At:   15:47:04 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-9-2022, NUMHOG: 8490, MAXHOG: 360, LASTHOG: 16
+LASTHOG At:   15:47:04 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-10-2023, NUMHOG: 2649, MAXHOG: 546, LASTHOG: 5
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-10-2023, PROC_PC_TOTAL: 57271, MAXHOG: 546, LASTHOG: 5
+LASTHOG At:   15:47:34 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-10-2023, NUMHOG: 8548, MAXHOG: 286, LASTHOG: 5
+LASTHOG At:   15:47:34 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-11-2024, NUMHOG: 2504, MAXHOG: 547, LASTHOG: 4
+LASTHOG At:   15:45:51 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+Process:      DATAPATH-11-2024, PROC_PC_TOTAL: 57264, MAXHOG: 547, LASTHOG: 9
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+
+Process:      DATAPATH-11-2024, NUMHOG: 8505, MAXHOG: 300, LASTHOG: 9
+LASTHOG At:   15:48:06 UTC Aug 16 2017
+PC:           0x0000000000000000 (suspend)
+Call stack: 
+
+
+CPU hog threshold (msec):  4.129
+Last cleared: 17:05:21 UTC Aug 15 2017
