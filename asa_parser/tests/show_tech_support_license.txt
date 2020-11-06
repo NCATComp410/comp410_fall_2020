@@ -1,0 +1,159 @@
+------------------ show tech-support license ------------------
+
+
+Smart Licensing Tech Support info
+
+Smart Licensing Status
+======================
+
+Smart Licensing is ENABLED
+
+Registration:
+  Status: REGISTERED
+  Virtual Account: KP_ASA
+  Export-Controlled Functionality: Allowed
+  Initial Registration: SUCCEEDED on Aug 08 16:37:41 2017 UTC
+  Last Renewal Attempt: None
+  Next Renewal Attempt: Feb 04 16:37:40 2018 UTC
+  Registration Expires: Aug 08 16:31:34 2018 UTC
+
+License Authorization:
+  Status: AUTHORIZED on Aug 08 17:08:45 2017 UTC
+  Last Communication Attempt: SUCCESS on Aug 08 17:08:45 2017 UTC
+  Next Communication Attempt: Sep 07 17:08:44 2017 UTC
+  Communication Deadline: Nov 06 17:02:42 2017 UTC
+
+Evaluation Period:
+  Evaluation Mode: Not In Use
+  Evaluation Period Remaining: 89 days, 23 hours, 37 minutes, 42 seconds
+
+License Usage
+=============
+Handle: 1
+    License: Firepower 2100 ASA Standard
+    Description: Firepower 2100 ASA Standard
+    Count: 1
+    Version: 1.0
+    Status: AUTHORIZED(3)
+    Status time: Tue Aug 08 17:07:31.000 UTC
+    Request Time: Aug 08 17:06:58 2017 UTC
+
+Handle: 2
+    License: Firepower 2100 ASA Security Contexts
+    Description: Firepower 2100 ASA Security Contexts
+    Count: 16
+    Version: 1.0
+    Status: AUTHORIZED(3)
+    Status time: Tue Aug 08 17:08:45.000 UTC
+    Request Time: Aug 08 17:07:40 2017 UTC
+
+Handle: 3
+    License: Cisco Firepower 2K Series ASA Strong Encryption (3DES/AES)
+    Description: Cisco Firepower 2K Series ASA Strong Encryption (3DES/AES)
+    Count: 1
+    Version: 1.0
+    Status: AUTHORIZED(3)
+    Status time: Tue Aug 08 17:08:45.000 UTC
+    Request Time: Aug 08 17:07:41 2017 UTC
+
+Product Information
+===================
+
+Agent Version
+=============
+Smart Agent for Licensing: 1.6.14_rel/129
+
+Upcoming Scheduled Jobs
+=======================
+Current time: Aug 16 15:48:35 2017 UTC
+IdCert Expiration Warning: Jun 09 16:31:34 2018 UTC (297 days, 0 hours, 42 minutes, 59 seconds remaining)
+Daily: Aug 16 16:41:56 2017 UTC (53 minutes, 21 seconds remaining)
+Certificate Renewal: Feb 04 16:37:40 2018 UTC (172 days, 0 hours, 49 minutes, 5 seconds remaining)
+Certificate Expiration Check: Aug 08 16:31:34 2018 UTC (357 days, 0 hours, 42 minutes, 59 seconds remaining)
+Authorization Renewal: Sep 07 17:08:44 2017 UTC (22 days, 1 hours, 20 minutes, 9 seconds remaining)
+Authorization Expiration Check: Nov 06 17:02:42 2017 UTC (82 days, 1 hours, 14 minutes, 7 seconds remaining)
+Init Flag Check: Not Available
+
+License Certificates
+====================
+Production Cert: True
+PIID: 12345
+Licensing Certificated:
+    Id certificate Info:
+        Start Date: Aug 08 16:31:36 2017 UTC
+        Expiry Date: Aug 08 16:31:36 2018 UTC
+        Version Number: 3
+        Issuer Name: Smart Licensing CA
+
+    Signing certificate Info:
+        Start Date: Sep 11 19:05:34 2013 UTC
+        Expiry Date: Jan 01 00:00:00 1970 UTC
+        Version Number: 3
+        Issuer Name: Cisco Licensing Root CA
+        Common Name: MMI Signer
+
+    Sub CA Info:
+        Start Date: Sep 11 19:06:30 2013 UTC
+        Expiry Date: Jan 01 00:00:00 1970 UTC
+        Version Number: 3
+        Issuer Name: Cisco Licensing Root CA
+        Common Name: Smart Licensing CA
+
+    Root Cert Info:
+        Start Date: May 30 19:48:47 2013 UTC
+        Expiry Date: Jan 01 00:00:00 1970 UTC
+        Version Number: 3
+        Issuer Name: Cisco Licensing Root CA
+        Common Name: Cisco Licensing Root CA
+
+
+HA Info
+==========
+RP Role: Active
+Chassis Role: Active
+Behavior Role: Active
+RMF: False
+CF: False
+CF State: Invalid
+
+Other Info
+==========
+Agent State: authorized
+TS enable: True
+Transport: Callhome
+Locale: en_US.UTF-8
+Debug flags: 0x0
+Privacy Send Hostname: True
+Privacy Send IP: True
+Build type:: Production
+sizeof(char)  : 1
+sizeof(int)   : 4
+sizeof(long)  : 8
+sizeof(char *): 8
+sizeof(time_t): 8
+sizeof(size_t): 8
+Endian: Little
+Write Erase Occurred: False
+XOS version: 8.0.0.0
+Reservation enable: False
+Reservation in progress: False
+Reservation type: None
+Reservation request code: <empty>
+Reservation authorization code: <empty>
+Reservation return code: <empty>
+Config Persist Received: True
+Message Version: 1.1
+bypassUDICheck: False
+loggingAddTid: False
+platformOverrideEvent: UnknownPlatformEvent
+WaitForHaRole: False
+standbyIsHot: False
+chkPtType: 0
+delayCommInit: False
+roleByEvent: False
+maxTraceLength: 256
+traceAlwaysOn: False
+debugFlags: 0
+
+
+Root CA Certificate: Production
