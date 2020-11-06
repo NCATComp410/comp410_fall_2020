@@ -1,0 +1,126 @@
+------------------ show context detail ------------------
+Context "system", is a system resource
+  Config URL: startup-config
+  Real Interfaces: 
+  Mapped Interfaces: Ethernet1/1, Ethernet1/1.3344-3345, Ethernet1/10, 
+     Ethernet1/11, Ethernet1/12, Ethernet1/13, Ethernet1/13.3354-3355, 
+     Ethernet1/14, Ethernet1/15, Ethernet1/16, Ethernet1/2, 
+     Ethernet1/2.3346, Ethernet1/3, Ethernet1/3.3347, Ethernet1/4, 
+     Ethernet1/4.3348, Ethernet1/5, Ethernet1/6, Ethernet1/7, 
+     Ethernet1/8, Ethernet1/9, Ethernet2/1, Ethernet2/1.3358-3359, 
+     Ethernet2/2, Ethernet2/2.3353, Ethernet2/2.3360, Ethernet2/3, 
+     Ethernet2/3.3361, Ethernet2/4, Ethernet2/4.3362, Ethernet2/5, 
+     Ethernet2/6, Ethernet2/7, Ethernet2/8, Internal-Data0/1, 
+     Internal-Data1/1, Management1/1, Port-channel1, 
+     Port-channel1.3350-3351, Port-channel2, Port-channel2.3357, 
+     Port-channel3, Port-channel3.3365
+  Class: default, Flags: 0x00000819, ID: 0
+
+Context "admin", has been created
+  Config URL: disk0:/admin.cfg
+  Real Interfaces: Ethernet1/13.3354-3355, Management1/1
+  Mapped Interfaces: Ethernet1/13.3354-3355, Management1/1
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000813, ID: 1
+
+Context "inside1", has been created
+  Config URL: disk0:/inside1
+  Real Interfaces: Ethernet1/1.3344-3345
+  Mapped Interfaces: Ethernet1/1.3344-3345
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 2
+
+Context "inside2", has been created
+  Config URL: disk0:/inside2
+  Real Interfaces: Ethernet1/2.3346, Ethernet1/3.3347
+  Mapped Interfaces: Ethernet1/2.3346, Ethernet1/3.3347
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 3
+  Failover group: 2
+
+Context "inside-6-7-9-10", has been created
+  Config URL: disk0:/inside-6-7-9-10
+  Real Interfaces: Port-channel1.3350-3351
+  Mapped Interfaces: Port-channel1.3350-3351
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 4
+
+Context "inside2-6", has been created
+  Config URL: disk0:/inside-2-6
+  Real Interfaces: Ethernet2/6, Port-channel3.3365
+  Mapped Interfaces: Ethernet2/6, Port-channel3.3365
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 5
+  Failover group: 2
+
+Context "inside11", has been created
+  Config URL: disk0:/inside11
+  Real Interfaces: Ethernet1/11, Ethernet2/2.3353
+  Mapped Interfaces: Ethernet1/11, Ethernet2/2.3353
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 6
+
+Context "inside13", has been created
+  Config URL: disk0:/inside13
+  Real Interfaces: 
+  Mapped Interfaces: 
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 7
+  Failover group: 2
+
+Context "inside14", has been created
+  Config URL: disk0:/inside14
+  Real Interfaces: Ethernet1/14, Port-channel2.3357
+  Mapped Interfaces: Ethernet1/14, Port-channel2.3357
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 8
+
+Context "inside4", has been created
+  Config URL: disk0:/inside4
+  Real Interfaces: Ethernet1/4.3348, Ethernet1/5
+  Mapped Interfaces: Ethernet1/4.3348, Ethernet1/5
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 9
+  Failover group: 2
+
+Context "inside2-1", has been created
+  Config URL: disk0:/inside2-1
+  Real Interfaces: Ethernet2/1.3358-3359
+  Mapped Interfaces: Ethernet2/1.3358-3359
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 10
+
+Context "inside2-2", has been created
+  Config URL: disk0:/inside2-2
+  Real Interfaces: Ethernet2/2.3360, Ethernet2/3.3361
+  Mapped Interfaces: Ethernet2/2.3360, Ethernet2/3.3361
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 11
+  Failover group: 2
+
+Context "inside2-4", has been created
+  Config URL: disk0:/inside2-4
+  Real Interfaces: Ethernet2/4.3362, Ethernet2/5
+  Mapped Interfaces: Ethernet2/4.3362, Ethernet2/5
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000811, ID: 12
+
+Context "null", is a system resource
+  Config URL: ... null ...
+  Real Interfaces: 
+  Mapped Interfaces: 
+  Real IPS Sensors: 
+  Mapped IPS Sensors: 
+  Class: default, Flags: 0x00000809, ID: 507

@@ -126,7 +126,10 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_context_details(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
+        result = asa.show_context_details()
+        self.assertIn('"text":', result)
+        self.assertIn('["Context \\"system\\", is a system resource"', result)
 
 
     def test_traffic(self):

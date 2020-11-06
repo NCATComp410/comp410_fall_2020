@@ -77,7 +77,7 @@ class AsaParser(ShowTech):
 
     def show_context_details(self):
         """Parser for show context details"""
-        return json.dumps({'stats': self.get_show_section('context details')})
+        return json.dumps({'text': self.get_show_section('context detail')})
 
     def show_interface(self):
         """Parser for show interface"""
