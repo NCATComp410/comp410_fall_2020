@@ -1,0 +1,30 @@
+------------------ show memory ------------------
+Free memory:        5318377472 bytes (34%)
+Used memory:       10255417344 bytes (66%)
+-------------     ------------------
+Total memory:      15573794816 bytes (100%)
+Note: Free memory is the free system memory. Additional memory may
+      be available from memory pools internal to the ASA process.
+      Use 'show memory detail' to see this information, but use it
+      with care since it may cause CPU hogs and packet loss under load.
+
+------------------ show memory ------------------
+Used memory:         713354248 bytes ( 5%)
+-------------     ------------------
+Total memory:      15573794816 bytes (100%)
+
+------------------ show memory ------------------
+Used memory:         281434712 bytes ( 2%)
+-------------     ------------------
+Total memory:      15573794816 bytes (100%)
+
+------------------ show memory ------------------
+Used memory:         153840016 bytes ( 1%)
+-------------     ------------------
+Total memory:      15573794816 bytes (100%)
+
+------------------ show memory ------------------
+Used memory:         179010936 bytes ( 1%)
+-------------     ------------------
+Total memory:      15573794816 bytes (100%)
+
