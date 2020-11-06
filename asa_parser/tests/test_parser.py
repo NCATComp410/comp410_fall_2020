@@ -123,7 +123,10 @@ class ParserTest(unittest.TestCase):
         self.assertIn('["Break down of per-core data path versus control point cpu usage:"', result)
 
     def test_ipsec_stats(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path,'show_ipsec_stats.txt'))
+        result = asa.ipsec_stats()
+        self.assertIn('"text":', result)
+        self.assertIn('["IPsec Global Statistics"', result)
 
     def test_context_details(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
