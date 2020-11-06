@@ -1,0 +1,26 @@
+------------------ show interface ------------------
+
+Interface Ethernet1/1.3344 "inside1", is up, line protocol is up
+  Traffic Statistics for "inside1":
+	8997654422 packets input, 1026279519222 bytes
+	7139461119 packets output, 320789631713 bytes
+	160551335 packets dropped
+  Control Point Interface States:
+	Interface number is 1
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3344 States:
+	Interface vlan config status is active
+	Interface vlan state is UP
+Interface Ethernet1/1.3345 "outside1", is up, line protocol is up
+  Traffic Statistics for "outside1":
+	7018298890 packets input, 315935086585 bytes
+	8831223452 packets output, 1018865276748 bytes
+	1964002 packets dropped
+  Control Point Interface States:
+	Interface number is 2
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3345 States:
+	Interface vlan config status is active
+	Interface vlan state is UP

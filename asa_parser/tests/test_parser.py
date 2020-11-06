@@ -111,13 +111,27 @@ class ParserTest(unittest.TestCase):
     def test_context_details(self):
         self.assertEqual(True, True)
 
-
     def test_traffic(self):
+        # create a new text file in the tests directory called show_cpu_detailed.txt
+        # this file will contain only the "show cpu detailed" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
         self.assertEqual(True, True)
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
         result = asa.show_traffic()
         self.assertIn('"text":', result)
         self.assertIn('["nlp_int_tap:"', result)
+
+    def test_interface(self):
+        # create a new text file in the tests directory called show_cpu_detailed.txt
+        # this file will contain only the "show cpu detailed" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_interface.txt.txt'))
+        result = asa.show_interface()
+        self.assertIn('"text":', result)
+        self.assertIn('["Interface Ethernet1/1.3344 "inside1", is up, line protocol is up"', result)
 
     def test_memory(self):
         self.assertEqual(True, True)
