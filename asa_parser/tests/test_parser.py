@@ -75,7 +75,7 @@ class ParserTest(unittest.TestCase):
         # the return is in JSON format
         result = asa.startup_config_errors()
 
-        # make sure the text section appears in the JSON return
+        # make sure each section appears in the JSON return
         self.assertIn('CriticalError', result)
 
         self.assertIn('Info', result)
