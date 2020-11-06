@@ -85,6 +85,20 @@ class ParserTest(unittest.TestCase):
 
     def test_tech_support_license(self):
         self.assertEqual(True, True)
+        # create a new text file in the tests directory called show_startup_config_errors.txt
+        # this file will contain only the "show tech-support license" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech_support_license.txt'))
+        result = asa.show_tech_support_license()
+
+        # execute the parser and get the result
+        # for now this will simply be a list of all the text in the section
+        # the return is in JSON format
+        self.assertIn('"text":', result)
+
+        # make sure the text section appears in the JSON returns
+        self.assertIn('["Smart Licensing Tech Support info"', result)
 
     def test_cpu_usage(self):
         self.assertEqual(True, True)
