@@ -1,5 +1,280 @@
 ------------------ show interface ------------------
 
+Interface Internal-Data0/1 "", is up, line protocol is up
+  Hardware is , BW 10000 Mbps, DLY 10 usec
+	(Unknown), (Unknown)
+	Input flow control is unsupported, output flow control is unsupported
+	IP address unassigned
+	107570899945 packets input, 14240931603794 bytes, 253887 no buffer
+	Received 465830051 broadcasts, 0 runts, 0 giants
+	0 input errors, 0 CRC, 0 frame, 3055048 overrun, 0 ignored, 0 abort
+	0 pause input, 0 resume input
+	0 L2 decode drops, 36911543 demux drops
+	111571971406 packets output, 18668362592487 bytes, 0 underruns
+	0 pause output, 0 resume output
+	0 output errors, 0 collisions, 0 interface resets
+	0 late collisions, 0 deferred
+	0 output decode drops
+	0 backplane ingress drops, 0 backplane egress drops
+	0 input reset drops, 0 output reset drops
+	input queue (blocks free curr/low): hardware (0/0)
+	output queue (blocks free curr/low): hardware (0/0)
+  Control Point Interface States:
+	Interface number is 2
+	Interface config status is active
+	Interface state is active
+Interface Port-channel1 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 4000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Port-channel1.3350 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 4000 Mbps, DLY 10 usec
+	VLAN identifier 3350
+	Available for allocation to a context
+Interface Port-channel1.3351 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 4000 Mbps, DLY 10 usec
+	VLAN identifier 3351
+	Available for allocation to a context
+Interface Port-channel2 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 20000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Port-channel2.3357 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 20000 Mbps, DLY 10 usec
+	VLAN identifier 3357
+	Available for allocation to a context
+Interface Port-channel3 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 2000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Port-channel3.3365 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 2000 Mbps, DLY 10 usec
+	VLAN identifier 3365
+	Available for allocation to a context
+Interface Ethernet1/1 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/1.3344 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 10 usec
+	VLAN identifier 3344
+	Available for allocation to a context
+Interface Ethernet1/1.3345 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 10 usec
+	VLAN identifier 3345
+	Available for allocation to a context
+Interface Ethernet1/2 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/2.3346 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 10 usec
+	VLAN identifier 3346
+	Available for allocation to a context
+Interface Ethernet1/3 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/3.3347 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 10 usec
+	VLAN identifier 3347
+	Available for allocation to a context
+Interface Ethernet1/4 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/4.3348 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 10 usec
+	VLAN identifier 3348
+	Available for allocation to a context
+Interface Ethernet1/5 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/6 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/7 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/8 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/9 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/10 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/11 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/12 "HALink", is up, line protocol is up
+  Hardware is EtherSVI, BW 1000 Mbps, DLY 1000 usec
+	Description: LAN/STATE Failover Interface
+	IP address 192.168.10.1, subnet mask 255.255.255.0
+  Control Point Interface States:
+	Interface number is 28
+	Interface config status is active
+	Interface state is active
+Interface Ethernet1/13 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/13.3354 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3354
+	Available for allocation to a context
+Interface Ethernet1/13.3355 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3355
+	Available for allocation to a context
+Interface Ethernet1/14 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/15 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet1/16 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Internal-Data1/1 "", is up, line protocol is up
+  Hardware is en_vtun rev00, BW Unknown Speed-Capability, DLY 1000 usec
+	(Full-duplex), (1000 Mbps)
+	Input flow control is unsupported, output flow control is unsupported
+	IP address unassigned
+	3 packets input, 230 bytes, 0 no buffer
+	Received 0 broadcasts, 0 runts, 0 giants
+	0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+	0 pause input, 0 resume input
+	0 L2 decode drops, 0 demux drops
+	3397 packets output, 400626 bytes, 0 underruns
+	0 pause output, 0 resume output
+	0 output errors, 0 collisions, 0 interface resets
+	0 late collisions, 0 deferred
+	0 input reset drops, 0 output reset drops
+	input queue (blocks free curr/low): hardware (0/0)
+	output queue (blocks free curr/low): hardware (0/0)
+  Control Point Interface States:
+	Interface number is 4
+	Interface config status is active
+	Interface state is active
+Interface Management1/1 "", is up, line protocol is up
+  Hardware is en_vtun rev00, BW Unknown Speed-Capability, DLY 1000 usec
+	Auto-Duplex(Full-duplex), Auto-Speed(1000 Mbps)
+	Input flow control is unsupported, output flow control is unsupported
+	Available for allocation to a context
+	IP address unassigned
+	32321438 packets input, 3067094786 bytes, 0 no buffer
+	Received 0 broadcasts, 0 runts, 0 giants
+	0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort
+	0 pause input, 0 resume input
+	1 L2 decode drops, 0 demux drops
+	52242562 packets output, 30209571678 bytes, 0 underruns
+	0 pause output, 0 resume output
+	0 output errors, 0 collisions, 0 interface resets
+	0 late collisions, 0 deferred
+	0 input reset drops, 0 output reset drops
+	input queue (blocks free curr/low): hardware (0/0)
+	output queue (blocks free curr/low): hardware (0/0)
+  Control Point Interface States:
+	Interface number is 3
+	Interface config status is active
+	Interface state is active
+Interface Ethernet2/1 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet2/1.3358 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3358
+	Available for allocation to a context
+Interface Ethernet2/1.3359 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3359
+	Available for allocation to a context
+Interface Ethernet2/2 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet2/2.3353 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3353
+	Available for allocation to a context
+Interface Ethernet2/2.3360 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3360
+	Available for allocation to a context
+Interface Ethernet2/3 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet2/3.3361 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3361
+	Available for allocation to a context
+Interface Ethernet2/4 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet2/4.3362 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 10 usec
+	VLAN identifier 3362
+	Available for allocation to a context
+Interface Ethernet2/5 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet2/6 "", is up, line protocol is up
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet2/7 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+Interface Ethernet2/8 "", is administratively down, line protocol is down (not associated on Supervisor)
+  Hardware is EtherSVI, BW 10000 Mbps, DLY 1000 usec
+	Available for allocation to a context
+
+------------------ show interface ------------------
+
+Interface Management1/1 "diagnostic", is up, line protocol is up
+	IP address 192.168.0.11, subnet mask 255.255.255.0
+  Traffic Statistics for "diagnostic":
+	32321603 packets input, 2614609569 bytes
+	52242880 packets output, 29478373322 bytes
+	70022 packets dropped
+	Management-only interface. Blocked 0 through-the-device packets
+		0 IPv4 packets originated from management network
+		0 IPv4 packets destined to management network
+		0 IPv6 packets originated from management network
+		0 IPv6 packets destined to management network
+  Control Point Interface States:
+	Interface number is 3
+	Interface config status is active
+	Interface state is active
+Interface Ethernet1/13.3354 "inside13", is up, line protocol is up
+  Traffic Statistics for "inside13":
+	95625677 packets input, 9825000331 bytes
+	30601368 packets output, 5550929432 bytes
+	462318 packets dropped
+  Control Point Interface States:
+	Interface number is 30
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3354 States:
+	Interface vlan config status is active
+	Interface vlan state is UP
+Interface Ethernet1/13.3355 "outside13", is up, line protocol is up
+  Traffic Statistics for "outside13":
+	35488934 packets input, 6437696438 bytes
+	95163369 packets output, 9740856726 bytes
+	4887585 packets dropped
+  Control Point Interface States:
+	Interface number is 31
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3355 States:
+	Interface vlan config status is active
+	Interface vlan state is UP
+Interface  "nlp_int_tap", is up, line protocol is up
+	IP address 169.254.1.1, subnet mask 255.255.255.248
+  Traffic Statistics for "nlp_int_tap":
+	3 packets input, 188 bytes
+	3397 packets output, 353068 bytes
+	1 packets dropped
+  Control Point Interface States:
+	Interface number is 1
+	Interface config status is active
+	Interface state is active
+
+------------------ show interface ------------------
+
 Interface Ethernet1/1.3344 "inside1", is up, line protocol is up
   Traffic Statistics for "inside1":
 	8997654422 packets input, 1026279519222 bytes
@@ -22,5 +297,61 @@ Interface Ethernet1/1.3345 "outside1", is up, line protocol is up
 	Interface config status is active
 	Interface state is active
   Control Point Vlan3345 States:
+	Interface vlan config status is active
+	Interface vlan state is UP
+
+------------------ show interface ------------------
+
+Interface Ethernet1/2.3346 "inside2", is up, line protocol is up
+	IP address unassigned
+  Traffic Statistics for "inside2":
+	30154197 packets input, 2374892182 bytes
+	18158139 packets output, 775411237 bytes
+	10211974 packets dropped
+  Control Point Interface States:
+	Interface number is 1
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3346 States:
+	Interface vlan config status is active
+	Interface vlan state is UP
+Interface Ethernet1/3.3347 "outside3", is up, line protocol is up
+	IP address unassigned
+  Traffic Statistics for "outside3":
+	8545976 packets input, 390646990 bytes
+	11269440 packets output, 1559154727 bytes
+	1760 packets dropped
+  Control Point Interface States:
+	Interface number is 2
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3347 States:
+	Interface vlan config status is active
+	Interface vlan state is UP
+
+------------------ show interface ------------------
+
+Interface Port-channel1.3350 "inside-6-7-9-10", is up, line protocol is up
+  Traffic Statistics for "inside-6-7-9-10":
+	42541379244 packets input, 2017663568766 bytes
+	33959662844 packets output, 1408098979082 bytes
+	374080752 packets dropped
+  Control Point Interface States:
+	Interface number is 1
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3350 States:
+	Interface vlan config status is active
+	Interface vlan state is UP
+Interface Port-channel1.3351 "outside-6-7-9-10", is up, line protocol is up
+  Traffic Statistics for "outside-6-7-9-10":
+	33624104586 packets input, 1394682569084 bytes
+	42165620704 packets output, 2001133404952 bytes
+	936523 packets dropped
+  Control Point Interface States:
+	Interface number is 2
+	Interface config status is active
+	Interface state is active
+  Control Point Vlan3351 States:
 	Interface vlan config status is active
 	Interface vlan state is UP
