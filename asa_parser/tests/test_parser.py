@@ -91,7 +91,10 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_memory_region(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
+        result = asa.show_memory_region()
+        self.assertIn('"text":', result)
+        self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
@@ -113,7 +116,10 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_memory(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
+        result = asa.show_memory()
+        self.assertIn('"text":', result)
+        self.assertIn('["Free memory:        5318377472 bytes (34%)"', result)
 
     def test_show_process(self):
         self.assertEqual(True, True)
