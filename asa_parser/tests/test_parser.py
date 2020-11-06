@@ -148,7 +148,7 @@ class ParserTest(unittest.TestCase):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_interface.txt'))
         result = asa.show_interface()
         self.assertIn('"text":', result)
-        self.assertIn('["Interface Ethernet1/1.3344 "inside1", is up, line protocol is up"', result)
+        self.assertIn('["Interface Internal-Data0/1 "", is up, line protocol is up"', result)
 
     def test_memory(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
