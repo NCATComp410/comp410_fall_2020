@@ -148,6 +148,9 @@ class ParserTest(unittest.TestCase):
     def test_show_kernel_process(self):
         self.assertEqual(True, True)
 
-    def show_logging_buffered(self):
-        self.assertEqual(True, True)
+    def test_show_logging_buffered(self):
 
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_logging_buffered.txt'))
+        result = asa.show_logging_buffered()
+        self.assertIn('"text":', result)
+        self.assertIn('["Aug 16 2017 15:35:37 KP-systest-admin : %ASA-4-711004: Task ran for 114 msec, Process = Unicorn Admin Handler, PC = f34bf8f4, Call stack = "', result)
