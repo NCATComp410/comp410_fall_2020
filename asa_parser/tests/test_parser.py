@@ -74,3 +74,9 @@ class ParserTest(unittest.TestCase):
 
     def test_ipsec_stats(self):
         self.assertEqual(True, True)
+
+    def test_tech_support_detail(self):
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech-support_detail.txt'))
+        result = asa.show_tech_support_detail()
+        self.assertIn('"text":', result)
+        self.assertIn('["Cisco Adaptive Security Appliance Software Version 101.1(1)71 <system>"', result)
