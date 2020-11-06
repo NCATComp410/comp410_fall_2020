@@ -77,3 +77,10 @@ class ParserTest(unittest.TestCase):
 
     def test_context_details(self):
         self.assertEqual(True, True)
+
+    def test_traffic(self):
+        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
+        result = asa.show_traffic()
+        self.assertIn('"text":', result)
+        self.assertIn('["nlp_int_tap:"', result)

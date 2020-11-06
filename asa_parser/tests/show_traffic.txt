@@ -1,0 +1,141 @@
+------------------ show traffic ------------------
+
+nlp_int_tap:
+	received (in 687980.920 secs):
+		3 packets	188 bytes
+		0 pkts/sec	0 bytes/sec
+	transmitted (in 687980.920 secs):
+		3397 packets	353068 bytes
+		0 pkts/sec	0 bytes/sec
+      1 minute input rate 0 pkts/sec,  0 bytes/sec
+      1 minute output rate 0 pkts/sec,  0 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 0 pkts/sec,  0 bytes/sec
+      5 minute output rate 0 pkts/sec,  0 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+diagnostic:
+	received (in 687980.930 secs):
+		32321608 packets	2614609934 bytes
+		3 pkts/sec	3001 bytes/sec
+	transmitted (in 687980.930 secs):
+		52242885 packets	29478373699 bytes
+		1 pkts/sec	42004 bytes/sec
+      1 minute input rate 80 pkts/sec,  6213 bytes/sec
+      1 minute output rate 81 pkts/sec,  7705 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 81 pkts/sec,  6339 bytes/sec
+      5 minute output rate 6128 pkts/sec,  8218785 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+inside13:
+	received (in 687980.930 secs):
+		95625677 packets	9825000331 bytes
+		1 pkts/sec	14006 bytes/sec
+	transmitted (in 687980.930 secs):
+		30601368 packets	5550929432 bytes
+		0 pkts/sec	8006 bytes/sec
+      1 minute input rate 0 pkts/sec,  1 bytes/sec
+      1 minute output rate 0 pkts/sec,  1 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 23738 pkts/sec,  1003812 bytes/sec
+      5 minute output rate 78 pkts/sec,  10096 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+outside13:
+	received (in 687980.930 secs):
+		35488934 packets	6437696438 bytes
+		1 pkts/sec	9001 bytes/sec
+	transmitted (in 687980.930 secs):
+		95163369 packets	9740856726 bytes
+		0 pkts/sec	14002 bytes/sec
+      1 minute input rate 0 pkts/sec,  1 bytes/sec
+      1 minute output rate 0 pkts/sec,  1 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 86 pkts/sec,  10427 bytes/sec
+      5 minute output rate 23738 pkts/sec,  1003808 bytes/sec
+      5 minute drop rate, 7 pkts/sec
+
+------------------ show traffic ------------------
+
+inside1:
+	received (in 687983.070 secs):
+		8997654422 packets	1026279519222 bytes
+		13003 pkts/sec	1491004 bytes/sec
+	transmitted (in 687983.070 secs):
+		7139461119 packets	320789631713 bytes
+		10002 pkts/sec	466000 bytes/sec
+      1 minute input rate 0 pkts/sec,  26 bytes/sec
+      1 minute output rate 0 pkts/sec,  1 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 0 pkts/sec,  29 bytes/sec
+      5 minute output rate 0 pkts/sec,  4 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+outside1:
+	received (in 687983.080 secs):
+		7018298890 packets	315935086585 bytes
+		10001 pkts/sec	459000 bytes/sec
+	transmitted (in 687983.080 secs):
+		8831223452 packets	1018865276748 bytes
+		12006 pkts/sec	1480002 bytes/sec
+      1 minute input rate 0 pkts/sec,  26 bytes/sec
+      1 minute output rate 0 pkts/sec,  1 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 0 pkts/sec,  26 bytes/sec
+      5 minute output rate 0 pkts/sec,  1 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+
+------------------ show traffic ------------------
+
+inside2:
+	received (in 687983.880 secs):
+		30154197 packets	2374892182 bytes
+		0 pkts/sec	3002 bytes/sec
+	transmitted (in 687983.880 secs):
+		18158139 packets	775411237 bytes
+		1 pkts/sec	1002 bytes/sec
+      1 minute input rate 0 pkts/sec,  26 bytes/sec
+      1 minute output rate 0 pkts/sec,  0 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 0 pkts/sec,  28 bytes/sec
+      5 minute output rate 0 pkts/sec,  3 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+outside3:
+	received (in 687983.880 secs):
+		8545976 packets	390646990 bytes
+		6 pkts/sec	5 bytes/sec
+	transmitted (in 687983.880 secs):
+		11269440 packets	1559154727 bytes
+		3 pkts/sec	2004 bytes/sec
+      1 minute input rate 0 pkts/sec,  0 bytes/sec
+      1 minute output rate 0 pkts/sec,  0 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 0 pkts/sec,  0 bytes/sec
+      5 minute output rate 0 pkts/sec,  0 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+
+------------------ show traffic ------------------
+
+inside-6-7-9-10:
+	received (in 687985.150 secs):
+		42541379244 packets	2017663568766 bytes
+		61004 pkts/sec	2932002 bytes/sec
+	transmitted (in 687985.150 secs):
+		33959662844 packets	1408098979082 bytes
+		49005 pkts/sec	2046000 bytes/sec
+      1 minute input rate 0 pkts/sec,  1 bytes/sec
+      1 minute output rate 0 pkts/sec,  1 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 0 pkts/sec,  1 bytes/sec
+      5 minute output rate 0 pkts/sec,  1 bytes/sec
+      5 minute drop rate, 0 pkts/sec
+outside-6-7-9-10:
+	received (in 687985.160 secs):
+		33624104586 packets	1394682569084 bytes
+		48005 pkts/sec	2027005 bytes/sec
+	transmitted (in 687985.160 secs):
+		42165620704 packets	2001133404952 bytes
+		61001 pkts/sec	2908000 bytes/sec
+      1 minute input rate 0 pkts/sec,  1 bytes/sec
+      1 minute output rate 0 pkts/sec,  1 bytes/sec
+      1 minute drop rate, 0 pkts/sec
+      5 minute input rate 0 pkts/sec,  1 bytes/sec
+      5 minute output rate 0 pkts/sec,  1 bytes/sec
+      5 minute drop rate, 0 pkts/sec
