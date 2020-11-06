@@ -145,7 +145,7 @@ class ParserTest(unittest.TestCase):
         # showtech_primary.txt file.  This is done to separate testing functionality from the
         # main production functionality.
         self.assertEqual(True, True)
-        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_interface.txt.txt'))
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_interface.txt'))
         result = asa.show_interface()
         self.assertIn('"text":', result)
         self.assertIn('["Interface Ethernet1/1.3344 "inside1", is up, line protocol is up"', result)
