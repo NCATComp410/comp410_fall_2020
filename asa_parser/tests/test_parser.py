@@ -138,12 +138,12 @@ class ParserTest(unittest.TestCase):
         self.assertIn('["Context \\"system\\", is a system resource"', result)
 
 
-    # def test_traffic(self):
-    #     self.assertEqual(True, True)
-    #     asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
-    #     result = asa.show_traffic()
-    #     self.assertIn('"text":', result)
-    #     self.assertIn('["nlp_int_tap:"', result)
+    def test_traffic(self):
+        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
+        result = asa.show_traffic()
+        self.assertIn('"text":', result)
+        self.assertIn('["nlp_int_tap:"', result)
 
     def test_memory(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
