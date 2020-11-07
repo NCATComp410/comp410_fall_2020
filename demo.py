@@ -24,6 +24,12 @@ def run_demo():
     print(df['Reason'].value_counts())
     print('Demo Message')
 
+
+
+    #show process cpu-hog
+    print(primary_asa.show_process_cpu_hog())
+
+
     # startup-config errors
     print(primary_asa.startup_config_errors())
 
@@ -58,7 +64,7 @@ def run_demo():
     print(primary_asa.show_memory_detail())
 
     #show process
-    print(primary_asa.test_show_process())
+    print(primary_asa.show_process())
 
 
 if __name__ == "__main__":

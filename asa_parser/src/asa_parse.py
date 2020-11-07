@@ -14,8 +14,8 @@ class AsaParser(ShowTech):
         """Returns failover history"""
 
         # Initialize variables
-        fh_list = []         # This will hold the failover info
-        timestamp = ''       # Timestamp of the current group information
+        fh_list = []    # This will hold the failover info
+        timestamp = ''  # Timestamp of the current group information
         group_found = False  # Identifies if parser has found a group
 
         # --- show failover history ---
@@ -35,10 +35,10 @@ class AsaParser(ShowTech):
                 group_found = False
         return json.dumps(fh_list)
 
-    def support_cpu_hog(self):
+    def show_process_cpu_hog(self):
         """Parser for process cpu-hog"""
         return json.dumps({'text': self.get_show_section('process cpu-hog')})
-        
+
     def startup_config_errors(self):
         """Parser for show startup-config errors"""
         return json.dumps({'text': self.get_show_section('startup-config errors')})
@@ -61,7 +61,7 @@ class AsaParser(ShowTech):
 
     def ipsec_stats(self):
         """Parser for show ipsec stats"""
-        return json.dumps({'stats': self.get_show_section('ipsec stats')})
+        return json.dumps({'text': self.get_show_section('ipsec stats')})
 
     def show_memory(self):
         """Parser for show memory"""
@@ -77,7 +77,7 @@ class AsaParser(ShowTech):
 
     def show_context_details(self):
         """Parser for show context details"""
-        return json.dumps({'stats': self.get_show_section('context details')})
+        return json.dumps({'text': self.get_show_section('context detail')})
 
     def show_interface(self):
         """Parser for show interface"""
@@ -87,15 +87,13 @@ class AsaParser(ShowTech):
         """Parser for show traffic"""
         return json.dumps({'text': self.get_show_section('traffic')})
 
-
     def show_process(self):
         """Parser for show process"""
         return json.dumps({'text': self.get_show_section('process')})
 
-	
     def show_logging_buffered(self):
-	    """Parser for show show logging buffered"""
-	    return json.dumps({'text': self.get_show_section('logging buffered')})
+        """Parser for show show logging buffered"""
+        return json.dumps({'text': self.get_show_section('logging buffered')})
 
     def show_kernel_process(self):
         """Parser for show kernel process"""

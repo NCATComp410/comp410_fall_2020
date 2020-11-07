@@ -57,29 +57,103 @@ class ParserTest(unittest.TestCase):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_failover_history.txt'))
         self.assertEqual(expected, asa.failover_history())
 
+
+
+    def test_show_process_cpu_hog(self):
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process_cpu_hog.txt'))
+        result = asa.show_process_cpu_hog()
+        self.assertIn('"text":', result)
+        self.assertIn('["Hardware:   FPR-2130"', result)
+
+
+        
+
     def test_startup_config_errors(self):
         self.assertEqual(True, True)
 
     def test_tech_support_license(self):
         self.assertEqual(True, True)
+        # create a new text file in the tests directory called show_startup_config_errors.txt
+        # this file will contain only the "show tech-support license" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech_support_license.txt'))
+        result = asa.show_tech_support_license()
+
+        # execute the parser and get the result
+        # for now this will simply be a list of all the text in the section
+        # the return is in JSON format
+        self.assertIn('"text":', result)
+
+        # make sure the text section appears in the JSON returns
+        self.assertIn('["Smart Licensing Tech Support info"', result)
 
     def test_cpu_usage(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_usage.txt'))
+        result = asa.show_cpu_usage()
+        self.assertIn('"text":', result)
+        self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
 
     def test_memory_region(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
+        result = asa.show_memory_region()
+        self.assertIn('"text":', result)
+        self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
-        self.assertEqual(True,True)
+        # create a new text file in the tests directory called show_cpu_detailed.txt
+        # this file will contain only the "show cpu detailed" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_detailed.txt'))
+
+        result = asa.show_cpu_detailed()
+
+        self.assertIn('"text":', result)
+
+        self.assertIn('["Break down of per-core data path versus control point cpu usage:"', result)
 
     def test_ipsec_stats(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path,'show_ipsec_stats.txt'))
+        result = asa.ipsec_stats()
+        self.assertIn('"text":', result)
+        self.assertIn('["IPsec Global Statistics"', result)
 
     def test_context_details(self):
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
+        result = asa.show_context_details()
+        self.assertIn('"text":', result)
+        self.assertIn('["Context \\"system\\", is a system resource"', result)
+
+
+    def test_traffic(self):
         self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
+        result = asa.show_traffic()
+        self.assertIn('"text":', result)
+        self.assertIn('["nlp_int_tap:"', result)
 
     def test_memory(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
+        result = asa.show_memory()
+        self.assertIn('"text":', result)
+        self.assertIn('["Free memory:        5318377472 bytes (34%)"', result)
 
     def test_show_process(self):
         self.assertEqual(True, True)
+        
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process.txt'))
+        result = asa.show_process()
+        self.assertIn('"text":', result)
+        self.assertIn('"Reading from flash..."', result)
+
+    def test_show_kernel_process(self):
+        self.assertEqual(True, True)
+
+    def test_show_logging_buffered(self):
+
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_logging_buffered.txt'))
+        result = asa.show_logging_buffered()
+        self.assertIn('"text":', result)
+        self.assertIn('["Aug 16 2017 15:35:37 KP-systest-admin : %ASA-4-711004: Task ran for 114 msec, Process = Unicorn Admin Handler, PC = f34bf8f4, Call stack = "', result)
+

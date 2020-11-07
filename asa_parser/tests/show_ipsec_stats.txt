@@ -1,0 +1,47 @@
+------------------ show ipsec stats ------------------
+
+
+IPsec Global Statistics
+-----------------------
+Active tunnels: 0
+Previous tunnels: 0
+Inbound
+    Bytes: 0
+    Decompressed bytes: 0
+    Packets: 0
+    Dropped packets: 0
+    Replay failures: 0
+    Authentications: 0
+    Authentication failures: 0
+    Decryptions: 0
+    Decryption failures: 0
+    TFC Packets: 0
+    Decapsulated fragments needing reassembly: 0
+    Valid ICMP Errors rcvd: 0
+    Invalid ICMP Errors rcvd: 0
+Outbound
+    Bytes: 0
+    Uncompressed bytes: 0
+    Packets: 0
+    Dropped packets: 0
+    Authentications: 0
+    Authentication failures: 0
+    Encryptions: 0
+    Encryption failures: 0
+    TFC Packets: 0
+    Fragmentation successes: 0
+        Pre-fragmentation successses: 0
+        Post-fragmentation successes: 0
+    Fragmentation failures: 0
+        Pre-fragmentation failures: 0
+        Post-fragmentation failures: 0
+    Fragments created: 0
+    PMTUs sent: 0
+    PMTUs rcvd: 0
+Protocol failures: 0
+Missing SA failures: 0
+System capacity failures: 0
+Inbound SA delete requests: 0
+Outbound SA delete requests: 0
+Inbound SA destroy calls: 0
+Outbound SA destroy calls: 0
