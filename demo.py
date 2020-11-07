@@ -58,7 +58,7 @@ def run_demo():
     print(primary_asa.show_memory_detail())
 
     #show process
-    print(primary_asa.test_show_process())
+    print(primary_asa.show_process())
 
 
 if __name__ == "__main__":
