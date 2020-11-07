@@ -101,7 +101,10 @@ class ParserTest(unittest.TestCase):
         self.assertIn('["Smart Licensing Tech Support info"', result)
 
     def test_cpu_usage(self):
-        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_usage.txt'))
+        result = asa.show_cpu_usage()
+        self.assertIn('"text":', result)
+        self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
 
     def test_memory_region(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
@@ -135,12 +138,12 @@ class ParserTest(unittest.TestCase):
         self.assertIn('["Context \\"system\\", is a system resource"', result)
 
 
-    def test_traffic(self):
-        self.assertEqual(True, True)
-        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
-        result = asa.show_traffic()
-        self.assertIn('"text":', result)
-        self.assertIn('["nlp_int_tap:"', result)
+    # def test_traffic(self):
+    #     self.assertEqual(True, True)
+    #     asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
+    #     result = asa.show_traffic()
+    #     self.assertIn('"text":', result)
+    #     self.assertIn('["nlp_int_tap:"', result)
 
     def test_memory(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
