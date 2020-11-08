@@ -107,5 +107,9 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def show_resource_usage_counter_all_1(self):
-        """Parser for show resource usage counter all"""
+        self.assertEqual(True, True)
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_resource_usage_counter_all_1.txt'))
+        result = asa.show_resource_usage_counter_all_1()
+        self.assertIn('"text":', result)
+        self.assertIn('["Resource                 Current        Peak      Limit        Denied Context"', result)
         return json.dumps({'text': self.get_show_section('resource usage counter all 1')})
