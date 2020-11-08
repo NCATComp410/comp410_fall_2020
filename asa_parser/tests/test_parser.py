@@ -1,3 +1,4 @@
+import json
 import unittest
 import asa_parser as ap
 import git
@@ -104,3 +105,7 @@ class ParserTest(unittest.TestCase):
 
     def show_logging_buffered(self):
         self.assertEqual(True, True)
+
+    def show_resource_usage_counter_all_1(self):
+        """Parser for show resource usage counter all"""
+        return json.dumps({'text': self.get_show_section('resource usage counter all 1')})

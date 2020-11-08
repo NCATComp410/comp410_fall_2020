@@ -1,0 +1,69 @@
+------------------ show resource usage counter all 1 ------------------
+
+
+Resource                 Current        Peak      Limit        Denied Context
+SSH Server                     1           2          5             0 admin
+ASDM                           1           3          5             0 admin
+Syslogs [rate]                 0       51542  unlimited             0 admin
+Conns                         50     1753679  unlimited             0 admin
+Hosts                          9     1065055  unlimited             0 admin
+Conns [rate]                   0       32232  unlimited             0 admin
+Inspects [rate]                0          41  unlimited             0 admin
+Routes                        19          19  unlimited             0 admin
+Syslogs [rate]                 0       80845  unlimited             0 inside-6-7-9-10
+Conns                          2      414470  unlimited             0 inside-6-7-9-10
+Xlates                         0      400689  unlimited             0 inside-6-7-9-10
+Hosts                          4        1196  unlimited             0 inside-6-7-9-10
+Conns [rate]                   0      105159  unlimited             0 inside-6-7-9-10
+Routes                         8           8  unlimited             0 inside-6-7-9-10
+Syslogs [rate]                 0       96322  unlimited             0 inside1
+Conns                          2     1448939  unlimited             0 inside1
+Xlates                         0     1490021  unlimited             0 inside1
+Hosts                          4        1131  unlimited             0 inside1
+Conns [rate]                   0       65820  unlimited             0 inside1
+Inspects [rate]                0          35  unlimited             0 inside1
+Routes                        12          12  unlimited             0 inside1
+Syslogs [rate]                 0       56827  unlimited             0 inside11
+Conns                          2      137112  unlimited             0 inside11
+Hosts                          4        1108  unlimited             0 inside11
+Conns [rate]                   0       21096  unlimited             0 inside11
+Routes                         8           8  unlimited             0 inside11
+Syslogs [rate]                 0       11348  unlimited             0 inside13
+Conns                          0     1999834  unlimited             0 inside13
+Hosts                          0      120002  unlimited             0 inside13
+Conns [rate]                   0       36110  unlimited             0 inside13
+Routes                         0           8  unlimited             0 inside13
+Syslogs [rate]                 0        2274  unlimited             0 inside14
+Conns                          2        3088  unlimited             0 inside14
+Hosts                          4         105  unlimited             0 inside14
+Conns [rate]                   0        4408  unlimited             0 inside14
+Routes                         8           8  unlimited             0 inside14
+Syslogs [rate]                 0        6635  unlimited             0 inside2
+Conns                          0      672450  unlimited             0 inside2
+Xlates                         0      670902  unlimited             0 inside2
+Hosts                          0        1129  unlimited             0 inside2
+Conns [rate]                   0       48128  unlimited             0 inside2
+Inspects [rate]                0        1395  unlimited             0 inside2
+Routes                         8          12  unlimited             0 inside2
+Syslogs [rate]                 0        2073  unlimited             0 inside2-1
+Conns                          2         994  unlimited             0 inside2-1
+Hosts                          4         105  unlimited             0 inside2-1
+Conns [rate]                   0        8733  unlimited             0 inside2-1
+Routes                         8           8  unlimited             0 inside2-1
+Syslogs [rate]                 0          22  unlimited             0 inside2-2
+Conns                          0        5165  unlimited             0 inside2-2
+Hosts                          0         105  unlimited             0 inside2-2
+Conns [rate]                   0       84827  unlimited             0 inside2-2
+Routes                         5           7  unlimited             0 inside2-2
+Syslogs [rate]                 2         137  unlimited             0 inside2-4
+Conns                          0           2  unlimited             0 inside2-4
+Hosts                          0           4  unlimited             0 inside2-4
+Routes                         4           4  unlimited             0 inside2-4
+Syslogs [rate]                 0          30  unlimited             0 inside2-6
+Syslogs [rate]                 0        6738  unlimited             0 inside4
+Conns                          0      917525  unlimited             0 inside4
+Xlates                         0     1702918  unlimited             0 inside4
+Hosts                          0        1128  unlimited             0 inside4
+Conns [rate]                   0       73338  unlimited             0 inside4
+Inspects [rate]                0         488  unlimited             0 inside4
+Routes                         8          12  unlimited             0 inside4
