@@ -160,10 +160,24 @@ class ParserTest(unittest.TestCase):
         self.assertIn('["Interface Internal-Data0/1 \\"\\", is up, line protocol is up"', result)
 
     def test_memory(self):
+        # create a new text file in the tests directory called show_memory.txt
+        # this file will contain only the "show memory" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
         result = asa.show_memory()
         self.assertIn('"text":', result)
         self.assertIn('["Free memory:        5318377472 bytes (34%)"', result)
+
+    def test_memory_detail(self):
+        # create a new text file in the tests directory called show_memory_detail.txt
+        # this file will contain only the "show memory detail" section from the main
+        # showtech_primary.txt file.  This is done to separate testing functionality from the
+        # main production functionality.
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_detail.txt'))
+        result = asa.show_memory_detail()
+        self.assertIn('"text":', result)
+        self.assertIn('----- allocated memory statistics -----', result)
 
     def test_show_process(self):
         self.assertEqual(True, True)
