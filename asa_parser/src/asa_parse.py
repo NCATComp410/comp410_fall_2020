@@ -85,7 +85,7 @@ class AsaParser(ShowTech):
 
     def ipsec_stats(self):
         """Parser for show ipsec stats"""
-        return json.dumps({'stats': self.get_show_section('ipsec stats')})
+        return json.dumps({'text': self.get_show_section('ipsec stats')})
 
     def show_memory(self):
         """Parser for show memory"""
@@ -101,7 +101,7 @@ class AsaParser(ShowTech):
 
     def show_context_details(self):
         """Parser for show context details"""
-        return json.dumps({'stats': self.get_show_section('context details')})
+        return json.dumps({'text': self.get_show_section('context detail')})
 
     def show_interface(self):
         """Parser for show interface"""

@@ -1,0 +1,3 @@
+------------------ show cpu usage ------------------
+
+CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%
