@@ -27,8 +27,11 @@ def run_demo():
     #show process cpu-hog
     print(primary_asa.show_process_cpu_hog())
 
-    # startup-config errors
-    print(primary_asa.startup_config_errors())
+    # startup-config errors in a dataframe
+    df = pd.read_json(primary_asa.startup_config_errors())
+    print('Startup config errors')
+    # show unique values in StarInfo
+    print(df['StarInfo'].unique())
 
     # tech support license
     print(primary_asa.show_tech_support_license())
