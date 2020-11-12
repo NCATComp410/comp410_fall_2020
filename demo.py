@@ -24,8 +24,14 @@ def run_demo():
     print(df['Reason'].value_counts())
     print('Demo Message')
 
-    # startup-config errors
-    print(primary_asa.startup_config_errors())
+    #show process cpu-hog
+    print(primary_asa.show_process_cpu_hog())
+
+    # startup-config errors in a dataframe
+    df = pd.read_json(primary_asa.startup_config_errors())
+    print('Startup config errors')
+    # show unique values in StarInfo
+    print(df['StarInfo'].unique())
 
     # tech support license
     print(primary_asa.show_tech_support_license())
@@ -41,6 +47,32 @@ def run_demo():
 
     # ipsec stats
     print(primary_asa.ipsec_stats())
+
+    # context details
+    print(primary_asa.show_context_details())
+
+    # interface
+    print(primary_asa.show_interface())
+
+    # traffic
+    print(primary_asa.show_traffic())
+
+    #show memory
+    print(primary_asa.show_memory())
+
+    #show memory detail
+    print(primary_asa.show_memory_detail())
+
+
+    #show process
+    print(primary_asa.show_process())
+
+
+    #show logging buffered
+    print(primary_asa.show_logging_buffered())
+
+    #show kernel process
+    print(primary_asa.show_kernel_process())
 
 
 if __name__ == "__main__":

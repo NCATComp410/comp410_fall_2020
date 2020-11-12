@@ -14,12 +14,12 @@ class AsaParser(ShowTech):
         """Returns failover history"""
 
         # Initialize variables
-        fh_list = []         # This will hold the failover info
-        timestamp = ''       # Timestamp of the current group information
+        fh_list = []    # This will hold the failover info
+        timestamp = ''  # Timestamp of the current group information
         group_found = False  # Identifies if parser has found a group
 
         # --- show failover history ---
-        for line in  self.get_show_section('failover history'):
+        for line in self.get_show_section('failover history'):
             # Check for a timestamp
             if ' UTC ' in line:
                 timestamp = line
@@ -35,9 +35,68 @@ class AsaParser(ShowTech):
                 group_found = False
         return json.dumps(fh_list)
 
+    def show_process_cpu_hog(self):
+        """Parser for process cpu-hog"""
+        return json.dumps({'text': self.get_show_section('process cpu-hog')})
+
     def startup_config_errors(self):
         """Parser for show startup-config errors"""
-        return json.dumps({'text': self.get_show_section('startup-config errors')})
+        # Create a list which will be a list of dicts
+        # which will be returned as a json string
+        config_errors = []
+
+        # This will be a holder for the last line parsed
+        # Will use this to handle the special case where
+        # an ERROR wraps to the next line
+        last_line = ''
+
+        # parse each line from the show tech section
+        # one line at a time
+        for line in self.get_show_section('startup-config errors'):
+            # !! MIO module heartbeat failure detected
+            if line.startswith('!! '):
+                # We'll call a line that starts with !!_ a critical error
+                # One way to parse this is to use split() as shown below
+                errs = {'CriticalError': line.split('!! ')[1]}
+
+                # line[3:] would also work because it would return
+                # line with the first 3 characters removed.
+                # errs = {'CriticalError': line[3:]}
+
+                config_errors.append(errs)
+
+            # INFO: Admin context is required to get the interfaces
+            elif line.startswith('INFO: '):
+                info = {'Info': line.split('INFO: ')[1]}
+                config_errors.append(info)
+
+            # *** Output from config line 166, "arp rate-limit 32768"
+            elif line.startswith('*** '):
+                stars = {'StarInfo': line.split('*** ')[1]}
+                config_errors.append(stars)
+
+            # WARNING: No 'anyconnect image' commands have been
+            elif line.startswith('WARNING:'):
+                warn = {'Warning': line.split('WARNING: ')[1]}
+                config_errors.append(warn)
+
+            # ERROR is a little tricker because it's possible the data will
+            # wrap to the next line like this:
+            #   ERROR: Inspect configuration of this type exists, first remove
+            #   that configuration and then add the new configuration
+            elif line.startswith('ERROR: '):
+                config_errors.append({'Error': line.split('ERROR: ')[1]})
+
+            else:
+                # if the last line was ERROR then assume the line wrapped
+                if last_line.startswith('ERROR: '):
+                    config_errors.append({'Error': line})
+
+            # keep track of the last line parsed so we can handle the
+            # ERROR special case
+            last_line = line
+
+        return json.dumps(config_errors)
 
     def show_tech_support_license(self):
         """Parser for show tech support license"""
@@ -48,7 +107,7 @@ class AsaParser(ShowTech):
         return json.dumps({'text': self.get_show_section('cpu usage')})
 
     def show_memory_region(self):
-        """Parser for show memory region"""
+        """Parser for show_memory region"""
         return json.dumps({'text': self.get_show_section('memory region')})
 
     def show_cpu_detailed(self):
@@ -57,8 +116,40 @@ class AsaParser(ShowTech):
 
     def ipsec_stats(self):
         """Parser for show ipsec stats"""
-        return json.dumps({'stats': self.get_show_section('ipsec stats')})
+        return json.dumps({'text': self.get_show_section('ipsec stats')})
+
+    def show_memory(self):
+        """Parser for show memory"""
+        return json.dumps({'text': self.get_show_section('memory')})
+
+    def show_memory_detail(self):
+        """Parsesr for show memory detail"""
+        return json.dumps({'text': self.get_show_section('memory detail')})
 
     def show_tech_support_detail(self):
         """Parser for show cpu detailed"""
         return json.dumps({'text': self.get_show_section('tech-support detail')})
+
+    def show_context_details(self):
+        """Parser for show context details"""
+        return json.dumps({'text': self.get_show_section('context detail')})
+
+    def show_interface(self):
+        """Parser for show interface"""
+        return json.dumps({'text': self.get_show_section('interface')})
+
+    def show_traffic(self):
+        """Parser for show traffic"""
+        return json.dumps({'text': self.get_show_section('traffic')})
+
+    def show_process(self):
+        """Parser for show process"""
+        return json.dumps({'text': self.get_show_section('process')})
+
+    def show_logging_buffered(self):
+        """Parser for show show logging buffered"""
+        return json.dumps({'text': self.get_show_section('logging buffered')})
+
+    def show_kernel_process(self):
+        """Parser for show kernel process"""
+        return json.dumps({'text': self.get_show_section('kernel process')})
