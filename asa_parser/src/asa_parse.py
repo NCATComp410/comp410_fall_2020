@@ -41,29 +41,60 @@ class AsaParser(ShowTech):
 
     def startup_config_errors(self):
         """Parser for show startup-config errors"""
-        # return json structure
+        # Create a list which will be a list of dicts
+        # which will be returned as a json string
         config_errors = []
 
+        # This will be a holder for the last line parsed
+        # Will use this to handle the special case where
+        # an ERROR wraps to the next line
+        last_line = ''
+
+        # parse each line from the show tech section
+        # one line at a time
         for line in self.get_show_section('startup-config errors'):
             # !! MIO module heartbeat failure detected
             if line.startswith('!! '):
+                # We'll call a line that starts with !!_ a critical error
+                # One way to parse this is to use split() as shown below
                 errs = {'CriticalError': line.split('!! ')[1]}
+
+                # line[3:] would also work because it would return
+                # line with the first 3 characters removed.
+                # errs = {'CriticalError': line[3:]}
+
                 config_errors.append(errs)
 
             # INFO: Admin context is required to get the interfaces
-            if line.startswith('INFO: '):
+            elif line.startswith('INFO: '):
                 info = {'Info': line.split('INFO: ')[1]}
                 config_errors.append(info)
 
             # *** Output from config line 166, "arp rate-limit 32768"
-            if line.startswith('*** '):
+            elif line.startswith('*** '):
                 stars = {'StarInfo': line.split('*** ')[1]}
                 config_errors.append(stars)
 
             # WARNING: No 'anyconnect image' commands have been
-            if line.startswith('WARNING:'):
+            elif line.startswith('WARNING:'):
                 warn = {'Warning': line.split('WARNING: ')[1]}
                 config_errors.append(warn)
+
+            # ERROR is a little tricker because it's possible the data will
+            # wrap to the next line like this:
+            #   ERROR: Inspect configuration of this type exists, first remove
+            #   that configuration and then add the new configuration
+            elif line.startswith('ERROR: '):
+                config_errors.append({'Error': line.split('ERROR: ')[1]})
+
+            else:
+                # if the last line was ERROR then assume the line wrapped
+                if last_line.startswith('ERROR: '):
+                    config_errors.append({'Error': line})
+
+            # keep track of the last line parsed so we can handle the
+            # ERROR special case
+            last_line = line
 
         return json.dumps(config_errors)
 

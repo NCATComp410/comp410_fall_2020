@@ -76,13 +76,17 @@ class ParserTest(unittest.TestCase):
         result = asa.startup_config_errors()
 
         # make sure each section appears in the JSON return
-        self.assertIn('CriticalError', result)
+        self.assertIn('"CriticalError":', result)
 
-        self.assertIn('Info', result)
+        self.assertIn('"Info":', result)
 
-        self.assertIn('StarInfo', result)
+        self.assertIn('"StarInfo":', result)
 
-        self.assertIn('Warning', result)
+        self.assertIn('"Warning":', result)
+
+        # make sure the correct Error information is included
+        self.assertIn('"Error": "Inspect configuration of this type exists, first remove"', result)
+        self.assertIn('"Error": "that configuration and then add the new configuration"', result)
 
     def test_tech_support_license(self):
         self.assertEqual(True, True)
