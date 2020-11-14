@@ -1,0 +1,57 @@
+-------- show tech-support detail --------
+
+Cisco Adaptive Security Appliance Software Version 101.1(1)71 <system>
+Firepower Extensible Operating System Version 2.2(2.42i)
+Device Manager Version 7.8(2)32
+
+Compiled on Mon 07-Aug-17 17:10 PDT by builders
+System image file is "disk0:/mnt/boot/installables/switch/fxos-k8-fp2k-npu.2.2.2.42i.SSA"
+Config file at boot was "startup-config"
+
+kp-systest-c1a-asa up 7 days 23 hours
+failover cluster up 7 days 23 hours
+
+Hardware:   FPR-2130, 14852 MB RAM, CPU MIPS 1200 MHz, 1 CPU (12 cores)
+
+License mode: Smart Licensing
+
+Licensed features for this platform:
+Maximum Physical Interfaces       : Unlimited
+Maximum VLANs                     : 1024
+Inside Hosts                      : Unlimited
+Failover                          : Active/Active
+Encryption-DES                    : Enabled
+Encryption-3DES-AES               : Enabled
+Security Contexts                 : 18
+Carrier                           : Disabled
+AnyConnect Premium Peers          : 7500
+AnyConnect Essentials             : Disabled
+Other VPN Peers                   : 7500
+Total VPN Peers                   : 7500
+AnyConnect for Mobile             : Enabled
+AnyConnect for Cisco VPN Phone    : Enabled
+Advanced Endpoint Assessment      : Enabled
+Shared License                    : Disabled
+Total TLS Proxy Sessions          : 8000
+Cluster                           : Disabled
+
+
+Failover cluster licensed features for this platform:
+Maximum Physical Interfaces       : Unlimited
+Maximum VLANs                     : 1024
+Inside Hosts                      : Unlimited
+Failover                          : Active/Active
+Encryption-DES                    : Enabled
+Encryption-3DES-AES               : Enabled
+Security Contexts                 : 20
+Carrier                           : Disabled
+AnyConnect Premium Peers          : 7500
+AnyConnect Essentials             : Disabled
+Other VPN Peers                   : 7500
+Total VPN Peers                   : 7500
+AnyConnect for Mobile             : Enabled
+AnyConnect for Cisco VPN Phone    : Enabled
+Advanced Endpoint Assessment      : Enabled
+Shared License                    : Disabled
+Total TLS Proxy Sessions          : 8000
+Cluster                           : Disabled
