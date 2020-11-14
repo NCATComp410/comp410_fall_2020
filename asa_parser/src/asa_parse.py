@@ -119,9 +119,9 @@ class AsaParser(ShowTech):
                 data = line.split()
                 mem = {'Address': data[0],
                        'Perm': data[1],
-                       'Offset': data[3],
-                       'Dev': data[4],
-                       'Inode': data[5]}
+                       'Offset': data[2],
+                       'Dev': data[3],
+                       'Inode': data[4]}
                 memory_region.append(mem)
         return json.dumps(memory_region)
 
