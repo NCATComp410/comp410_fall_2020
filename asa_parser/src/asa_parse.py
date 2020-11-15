@@ -37,7 +37,37 @@ class AsaParser(ShowTech):
 
     def show_process_cpu_hog(self):
         """Parser for process cpu-hog"""
-        return json.dumps({'text': self.get_show_section('process cpu-hog')})
+        #return json.dumps({'text': self.get_show_section('process cpu-hog')})
+        
+        config_errors = []
+
+        last_line = ''
+
+        # parse each line from the show tech section
+        # one line at a time
+        for line in self.get_show_section('process cpu-hog'):
+            
+            if line.startswith('Process:'):
+                errs = {'Process': line.split('Process:')[1].strip()}
+                config_errors.append(errs)
+            elif line.startswith('LASTHOG At:'):
+                errs = {'Last Hog': line.split('LASTHOG At:')[1].strip()}
+                config_errors.append(errs)
+
+            elif line.startswith('PC:'):
+                errs = {'PC': line.split('PC:')[1].strip()}
+                config_errors.append(errs)
+
+            elif line.startswith('Call stack:'):
+                errs = {'Call Stack': line.split('Call stack:')[1].strip()}
+                config_errors.append(errs)
+
+            else:
+                errs = {'Info': line}
+                config_errors.append(errs)
+            last_line = line
+
+        return json.dumps(config_errors)
 
     def startup_config_errors(self):
         """Parser for show startup-config errors"""
