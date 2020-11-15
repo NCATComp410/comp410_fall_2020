@@ -108,7 +108,25 @@ class AsaParser(ShowTech):
 
     def show_memory_region(self):
         """Parser for show_memory region"""
-        return json.dumps({'text': self.get_show_section('memory region')})
+        memory_region = []
+        info = ''
+
+        for line in self.get_show_section('memory region'):
+            if 'ASLR ' in line:
+                info = line
+                memory_region.append(info)
+            # only parse lines that are not blank
+            elif len(line):
+                print(line)
+                data = re.split(r'\s+', line)
+                mem = {'Address': data[0],
+                       'Perm': data[1],
+                       'Offset': data[2],
+                       'Dev': data[3],
+                       'Inode': data[4],
+                       'Pathname': data[5]}
+                memory_region.append(mem)
+        return json.dumps(memory_region)
 
     def show_cpu_detailed(self):
         """Parser for show cpu detailed"""

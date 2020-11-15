@@ -114,7 +114,13 @@ class ParserTest(unittest.TestCase):
     def test_memory_region(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
         result = asa.show_memory_region()
-        self.assertIn('"text":', result)
+        self.assertIn('"Address":', result)
+        self.assertIn('"Address"', result)
+        self.assertIn('"Perm"', result)
+        self.assertIn('"Offset"', result)
+        self.assertIn('"Dev"', result)
+        self.assertIn('"Inode"', result)
+        self.assertIn('"Pathname"', result)
         self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
