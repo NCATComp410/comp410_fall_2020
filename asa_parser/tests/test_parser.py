@@ -120,6 +120,7 @@ class ParserTest(unittest.TestCase):
         self.assertIn('"Offset"', result)
         self.assertIn('"Dev"', result)
         self.assertIn('"Inode"', result)
+        self.assertIn('"Pathname"', result)
         self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
