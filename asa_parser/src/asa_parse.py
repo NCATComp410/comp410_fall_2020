@@ -111,17 +111,20 @@ class AsaParser(ShowTech):
         memory_region = []
         info = ''
 
-        for line in self.get_show_section('show_memory_region'):
-            if ' ASLR ' in line:
+        for line in self.get_show_section('memory region'):
+            if 'ASLR ' in line:
                 info = line
                 memory_region.append(info)
-            else:
-                data = line.split()
+            # only parse lines that are not blank
+            elif len(line):
+                print(line)
+                data = re.split(r'\s+', line)
                 mem = {'Address': data[0],
                        'Perm': data[1],
                        'Offset': data[2],
                        'Dev': data[3],
-                       'Inode': data[4]}
+                       'Inode': data[4],
+                       'Pathname': data[5]}
                 memory_region.append(mem)
         return json.dumps(memory_region)
 
