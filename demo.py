@@ -6,6 +6,7 @@ import pandas as pd
 
 
 def run_demo():
+    
     # Find path to the data directory in this repo
     data_path = os.path.join(git.Repo('.', search_parent_directories=True).working_tree_dir, 'data')
 
@@ -14,7 +15,7 @@ def run_demo():
 
     # show clock example
     print(primary_asa.clock())
-
+    
     # show failover history example
     print(primary_asa.failover_history())
 
@@ -24,15 +25,20 @@ def run_demo():
     print(df['Reason'].value_counts())
     print('Demo Message')
 
-    #show process cpu-hog
-    print(primary_asa.show_process_cpu_hog())
+        
+    #show process cpu-hog in a dataframe
+    df = pd.read_json(primary_asa.show_process_cpu_hog())
+    print('Show Process Cpu Hog')
+    print(df['Process'].unique())
 
+    
     # startup-config errors in a dataframe
     df = pd.read_json(primary_asa.startup_config_errors())
     print('Startup config errors')
     # show unique values in StarInfo
-    print(df['StarInfo'].unique())
+    print(df['CriticalError'].unique())
 
+    
     # tech support license
     print(primary_asa.show_tech_support_license())
 
@@ -73,7 +79,7 @@ def run_demo():
 
     #show kernel process
     print(primary_asa.show_kernel_process())
-
+    
 
 if __name__ == "__main__":
     run_demo()
