@@ -60,19 +60,11 @@ class ParserTest(unittest.TestCase):
     def test_show_process_cpu_hog(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process_cpu_hog.txt'))
         result = asa.show_process_cpu_hog()
+        self.assertIn('"text":', result)
+        self.assertIn('["Hardware:   FPR-2130"', result)
 
-        self.assertIn('"Process":', result)
 
-        self.assertIn('"Last Hog":', result)
-
-        self.assertIn('"PC":', result)
-
-        self.assertIn('"Call Stack":', result)
-
-        self.assertIn('"Info":', result)
-        #self.assertIn('"text":', result)
-        #self.assertIn('["Hardware:   FPR-2130"', result)
-
+        
     def test_startup_config_errors(self):
         # create a new text file in the tests directory called show_startup_config_errors.txt
         # this file will contain only the "show startup-config errors" section from the main
@@ -85,35 +77,23 @@ class ParserTest(unittest.TestCase):
         # the return is in JSON format
         result = asa.startup_config_errors()
 
-        # make sure each section appears in the JSON return
-        self.assertIn('"CriticalError":', result)
-
-        self.assertIn('"Info":', result)
-
-        self.assertIn('"StarInfo":', result)
-
-        self.assertIn('"Warning":', result)
-
-        # make sure the correct Error information is included
-        self.assertIn('"Error": "Inspect configuration of this type exists, first remove"', result)
-        self.assertIn('"Error": "that configuration and then add the new configuration"', result)
-
-    def test_tech_support_license(self):
-        self.assertEqual(True, True)
-        # create a new text file in the tests directory called show_startup_config_errors.txt
-        # this file will contain only the "show tech-support license" section from the main
-        # showtech_primary.txt file.  This is done to separate testing functionality from the
-        # main production functionality.
-        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech_support_license.txt'))
-        result = asa.show_tech_support_license()
-
-        # execute the parser and get the result
-        # for now this will simply be a list of all the text in the section
-        # the return is in JSON format
+        # make sure the text section appears in the JSON return
         self.assertIn('"text":', result)
 
-        # make sure the text section appears in the JSON returns
-        self.assertIn('["Smart Licensing Tech Support info"', result)
+        # check to make sure the first line of the show section is present in the JSON return
+        self.assertIn('["Reading from flash..."', result)
+
+    def test_tech_support_license(self):
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech_support_license.txt'))
+        result = asa.show_tech_support_license()
+        self.assertIn('Registration:', result)
+        self.assertIn('Handle:', result)
+        self.assertIn('License:', result)
+        self.assertIn('Description:', result)
+        self.assertIn('Count:', result)
+        self.assertIn('Version:', result)
+        self.assertIn('Status:', result)
+        self.assertIn('Reservation', result)
 
     def test_cpu_usage(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_usage.txt'))
@@ -124,13 +104,7 @@ class ParserTest(unittest.TestCase):
     def test_memory_region(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
         result = asa.show_memory_region()
-        self.assertIn('"Address":', result)
-        self.assertIn('"Address"', result)
-        self.assertIn('"Perm"', result)
-        self.assertIn('"Offset"', result)
-        self.assertIn('"Dev"', result)
-        self.assertIn('"Inode"', result)
-        self.assertIn('"Pathname"', result)
+        self.assertIn('"text":', result)
         self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
@@ -212,9 +186,3 @@ class ParserTest(unittest.TestCase):
         result = asa.show_logging_buffered()
         self.assertIn('"text":', result)
         self.assertIn('["Aug 16 2017 15:35:37 KP-systest-admin : %ASA-4-711004: Task ran for 114 msec, Process = Unicorn Admin Handler, PC = f34bf8f4, Call stack = "', result)
-
-    def test_tech_support_detail(self):
-        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech-support_detail.txt'))
-        result = asa.show_tech_support_detail()
-        self.assertIn('"text":', result)
-        self.assertIn('["Cisco Adaptive Security Appliance Software Version 101.1(1)71 <system>"', result)
