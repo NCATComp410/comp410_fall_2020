@@ -70,11 +70,9 @@ class ParserTest(unittest.TestCase):
         self.assertIn('"Call Stack":', result)
 
         self.assertIn('"Info":', result)
-        # self.assertIn('"text":', result)
-        # self.assertIn('["Hardware:   FPR-2130"', result)
+        #self.assertIn('"text":', result)
+        #self.assertIn('["Hardware:   FPR-2130"', result)
 
-
-        
     def test_startup_config_errors(self):
         # create a new text file in the tests directory called show_startup_config_errors.txt
         # this file will contain only the "show startup-config errors" section from the main
@@ -209,3 +207,9 @@ class ParserTest(unittest.TestCase):
         result = asa.show_logging_buffered()
         self.assertIn('"text":', result)
         self.assertIn('["Aug 16 2017 15:35:37 KP-systest-admin : %ASA-4-711004: Task ran for 114 msec, Process = Unicorn Admin Handler, PC = f34bf8f4, Call stack = "', result)
+
+    def test_tech_support_detail(self):
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech-support_detail.txt'))
+        result = asa.show_tech_support_detail()
+        self.assertIn('"text":', result)
+        self.assertIn('["Cisco Adaptive Security Appliance Software Version 101.1(1)71 <system>"', result)
