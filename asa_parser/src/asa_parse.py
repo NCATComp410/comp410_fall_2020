@@ -147,7 +147,6 @@ class AsaParser(ShowTech):
                 memory_region.append(info)
             # only parse lines that are not blank
             elif len(line):
-                print(line)
                 data = re.split(r'\s+', line)
                 mem = {'Address': data[0],
                        'Perm': data[1],
