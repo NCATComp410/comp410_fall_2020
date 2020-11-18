@@ -60,8 +60,18 @@ class ParserTest(unittest.TestCase):
     def test_show_process_cpu_hog(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process_cpu_hog.txt'))
         result = asa.show_process_cpu_hog()
-        self.assertIn('"text":', result)
-        self.assertIn('["Hardware:   FPR-2130"', result)
+
+        self.assertIn('"Process":', result)
+
+        self.assertIn('"Last Hog":', result)
+
+        self.assertIn('"PC":', result)
+
+        self.assertIn('"Call Stack":', result)
+
+        self.assertIn('"Info":', result)
+        # self.assertIn('"text":', result)
+        # self.assertIn('["Hardware:   FPR-2130"', result)
 
 
         
@@ -77,11 +87,18 @@ class ParserTest(unittest.TestCase):
         # the return is in JSON format
         result = asa.startup_config_errors()
 
-        # make sure the text section appears in the JSON return
-        self.assertIn('"text":', result)
+        # make sure each section appears in the JSON return
+        self.assertIn('"CriticalError":', result)
 
-        # check to make sure the first line of the show section is present in the JSON return
-        self.assertIn('["Reading from flash..."', result)
+        self.assertIn('"Info":', result)
+
+        self.assertIn('"StarInfo":', result)
+
+        self.assertIn('"Warning":', result)
+
+        # make sure the correct Error information is included
+        self.assertIn('"Error": "Inspect configuration of this type exists, first remove"', result)
+        self.assertIn('"Error": "that configuration and then add the new configuration"', result)
 
     def test_tech_support_license(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech_support_license.txt'))
@@ -104,7 +121,13 @@ class ParserTest(unittest.TestCase):
     def test_memory_region(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
         result = asa.show_memory_region()
-        self.assertIn('"text":', result)
+        self.assertIn('"Address":', result)
+        self.assertIn('"Address"', result)
+        self.assertIn('"Perm"', result)
+        self.assertIn('"Offset"', result)
+        self.assertIn('"Dev"', result)
+        self.assertIn('"Inode"', result)
+        self.assertIn('"Pathname"', result)
         self.assertIn('["ASLR enabled, text region fff2b5c000-fff70be33c"', result)
 
     def test_cpu_detailed(self):
