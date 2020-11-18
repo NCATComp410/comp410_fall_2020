@@ -163,12 +163,18 @@ class ParserTest(unittest.TestCase):
         # this file will contain only the "show cpu detailed" section from the main
         # showtech_primary.txt file.  This is done to separate testing functionality from the
         # main production functionality.
-        self.assertEqual(True, True)
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
         result = asa.show_traffic()
-        self.assertIn('"text":', result)
-        self.assertIn('["nlp_int_tap:"', result)
-
+        self.assertIn('"nlp_int_tap:"', result)
+        self.assertIn('"diagnostic:"', result)
+        self.assertIn('"inside13:"', result)
+        self.assertIn('"outside13:"', result)
+        self.assertIn('"inside1:"', result)
+        self.assertIn('"outside1:"', result)
+        self.assertIn('"inside2:"', result)
+        self.assertIn('"outside3:"', result)
+        self.assertIn('"inside-6-7-9-10:"', result)
+        self.assertIn('"outside-6-7-9-10:"', result)
     def test_interface(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
         # this file will contain only the "show cpu detailed" section from the main
