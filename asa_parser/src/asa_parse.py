@@ -252,7 +252,58 @@ class AsaParser(ShowTech):
 
     def show_memory_detail(self):
         memory_detail = []
-        return json.dumps({'text': self.get_show_section('memory detail')})
+        get_heap = False
+        total = False
+        get_mempool = False
+        get_fragmented = False
+        allocated_memory_stats = False
+        for line in self.get_show_section('memory detail'):
+            if "Heap" in line:
+                get_heap = True
+
+            if get_heap:
+                if '-' not in line:
+                    data = line.split(':')
+                    memory_detail.append({data[0].strip():data[1].strip()})
+            elif total:
+                data = line.split(':')
+                memory_detail.append({data[0].strip():data[1].strip()})
+                total = False
+
+            if get_mempool:
+                if '---' not in line:
+                    data = line.split("=")
+                memory_detail.append({data[0].strip():data[1].strip()})
+
+            if get_fragmented or allocated_memory_stats:
+                data = re.findall(r'\d+\**', line)
+                fragmented = {}
+                if data:
+                    fragmented['fragment size'] = data[0]
+                    fragmented['count'] = data[1]
+                    fragmented['total'] = data[2]
+                    memory_detail.append(fragmented)
+
+            if "MEMPOOL" in line or 'pool' in line:
+                get_mempool = True
+                allocated_memory_stats = False
+
+            if line.startswith('----- allocated'):
+                allocated_memory_stats = True
+                get_fragmented = False
+                memory_detail.append(fragmented)
+
+            if line.startswith('----- fragmented'):
+                get_fragmented = True
+
+            if '---' in line:
+                if get_heap:
+                    get_heap = False
+                    total = True
+                if get_mempool:
+                    get_mempool = False
+                continue
+        return json.dumps(memory_detail)
 
     def show_tech_support_detail(self):
         """Parser for show cpu detailed"""
