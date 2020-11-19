@@ -154,8 +154,21 @@ class ParserTest(unittest.TestCase):
     def test_context_details(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
         result = asa.show_context_details()
-        self.assertIn('"text":', result)
-        self.assertIn('["Context \\"system\\", is a system resource"', result)
+        self.assertIn('System', result)
+        self.assertIn('Admin', result)
+        self.assertIn('Inside1', result)
+        self.assertIn('Inside2', result)
+        self.assertIn('Inside6', result)
+        self.assertIn('Inside2-6', result)
+        self.assertIn('Inside11', result)
+        self.assertIn('Inside13', result)
+        self.assertIn('Inside14', result)
+        self.assertIn('Inside4', result)
+        self.assertIn('Inside2-1', result)
+        self.assertIn('Inside2-2', result)
+        self.assertIn('Inside2-4', result)
+        self.assertIn('Null', result)
+
 
     def test_traffic(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
