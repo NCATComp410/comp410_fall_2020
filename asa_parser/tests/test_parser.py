@@ -144,8 +144,10 @@ class ParserTest(unittest.TestCase):
     def test_ipsec_stats(self):
         asa = ap.AsaParser(os.path.join(self.txt_path,'show_ipsec_stats.txt'))
         result = asa.ipsec_stats()
-        self.assertIn('"text":', result)
-        self.assertIn('["IPsec Global Statistics"', result)
+        self.assertIn('Outbound', result)
+        self.assertIn('Inbound', result)
+        self.assertIn('"Protocol failures": "0"', result)
+        self.assertIn('"Invalid ICMP Errors rcvd": "0"', result)
 
     def test_context_details(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
