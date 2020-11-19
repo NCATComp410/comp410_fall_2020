@@ -146,8 +146,10 @@ class ParserTest(unittest.TestCase):
     def test_ipsec_stats(self):
         asa = ap.AsaParser(os.path.join(self.txt_path,'show_ipsec_stats.txt'))
         result = asa.ipsec_stats()
-        self.assertIn('"text":', result)
-        self.assertIn('["IPsec Global Statistics"', result)
+        self.assertIn('Outbound', result)
+        self.assertIn('Inbound', result)
+        self.assertIn('"Protocol failures": "0"', result)
+        self.assertIn('"Invalid ICMP Errors rcvd": "0"', result)
 
     def test_context_details(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
@@ -190,8 +192,9 @@ class ParserTest(unittest.TestCase):
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
         result = asa.show_memory()
-        self.assertIn('"text":', result)
-        self.assertIn('["Free memory:        5318377472 bytes (34%)"', result)
+        self.assertIn('"Free memory":', result)
+        self.assertIn('"Used memory":', result)
+        self.assertIn('"Total memory":', result)
 
     def test_memory_detail(self):
         # create a new text file in the tests directory called show_memory_detail.txt
@@ -200,8 +203,19 @@ class ParserTest(unittest.TestCase):
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_detail.txt'))
         result = asa.show_memory_detail()
-        self.assertIn('"text":', result)
-        self.assertIn('----- allocated memory statistics -----', result)
+        self.assertIn("Heap Memory", result)
+        self.assertIn("Free Memory", result)
+        self.assertIn("System", result)
+        self.assertIn("Used Memory", result)
+        self.assertIn("1073741824", result)
+        self.assertIn('**', result)
+        self.assertIn('196608', result)
+        self.assertIn('2095616000', result)
+        self.assertIn('91520', result)
+        self.assertIn('116764672', result)
+        self.assertIn('730662368', result)
+        #self.assertIn('"text":', result)
+        #self.assertIn('----- allocated memory statistics -----', result)
 
     def test_show_process(self):
         self.assertEqual(True, True)
