@@ -130,7 +130,43 @@ class AsaParser(ShowTech):
 
     def show_tech_support_license(self):
         """Parser for show tech support license"""
-        return json.dumps({'text': self.get_show_section('tech-support license')})
+        #return json structure
+        support_license = []
+
+        for line in self.get_show_section('tech-support license'):
+            if line.startswith('Registration:'):
+                rgs = {'Registration:': line.split('Registration:')[1]}
+                support_license.append(rgs)
+
+            if line.startswith('Handle:'):
+                info = {'Handle:': line.split('Handle:')[1]}
+                support_license.append(info)
+
+            if line.startswith('    License:'):
+                license = {'    License:': line.split('    License:')[1]}
+                support_license.append(license)
+
+            if line.startswith('    Description:'):
+                desc = {'    Description:': line.split('    Description:')[1]}
+                support_license.append(desc)
+
+            if line.startswith('    Count:'):
+                count = {'    Count:': line.split('    Count:')[1]}
+                support_license.append(count)
+
+            if line.startswith('    Version:'):
+                vers = {'    Version:': line.split('    Version:')[1]}
+                support_license.append(vers)
+
+            if line.startswith('    Status:'):
+                stat = {'    Status:': line.split('    Status:')[1]}
+                support_license.append(stat)
+
+            if line.startswith('Reservation'):
+                res = {'Reservation':line.split('Reservation')[1]}
+                support_license.append(res)
+
+        return json.dumps(support_license)
 
     def show_cpu_usage(self):
         """Parser for show cpu usage"""
@@ -147,7 +183,7 @@ class AsaParser(ShowTech):
                 memory_region.append(info)
             # only parse lines that are not blank
             elif len(line):
-                print(line)
+                # print(line)
                 data = re.split(r'\s+', line)
                 mem = {'Address': data[0],
                        'Perm': data[1],
