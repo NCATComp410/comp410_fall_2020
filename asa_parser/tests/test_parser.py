@@ -1,4 +1,3 @@
-import json
 import unittest
 import asa_parser as ap
 import git
@@ -109,4 +108,4 @@ class ParserTest(unittest.TestCase):
     def test_show_resource_usage_counter_all_1(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_resource_usage_counter_all_1.txt'))
         result = asa.show_resource_usage_counter_all_1()
-        self.assertIn('show resource usage counter all 1', result)
+        self.assertIn('Resource', result)
