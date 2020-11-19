@@ -113,8 +113,10 @@ class ParserTest(unittest.TestCase):
     def test_cpu_usage(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_usage.txt'))
         result = asa.show_cpu_usage()
-        self.assertIn('"text":', result)
-        self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
+        self.assertIn('CPU utilization for 5 seconds', result)
+        self.assertIn('1 minute', result)
+        self.assertIn('5 minutes', result)
+        #self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
 
     def test_memory_region(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
