@@ -94,3 +94,24 @@ class AsaParser(ShowTech):
     def show_kernel_process(self):
         """Parser for show kernel process"""
         return json.dumps({'text': self.get_show_section('kernel process')})
+
+    def show_resource_usage_counter_all_1(self):
+        """Parser for show resource usage counter all 1"""
+        # Create a list which will be a list of dicts
+        # which will be returned as a json string
+        count_errors = []
+
+        # parse each line from the show tech section
+        # one line at a time
+        for line in self.get_show_section('show resource usage counter all 1'):
+            if len(line):
+                print(line)
+                info = re.split(r'\s+', line)
+                data = {'Resource': info[0],
+                        'Current': info[1],
+                        'Peak': info[2],
+                        'Limit': info[3],
+                        'Denied': info[4],
+                        'Context': info[5]}
+                count_errors.append(data)
+        return json.dumps(count_errors)
