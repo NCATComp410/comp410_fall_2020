@@ -13,6 +13,7 @@ def run_demo():
     # Create an asa sh tech object
     primary_asa = ap.AsaParser(os.path.join(data_path, 'showtech_primary.txt'))
 
+
     # show clock example
     print(primary_asa.clock())
     
