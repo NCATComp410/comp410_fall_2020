@@ -224,7 +224,29 @@ class AsaParser(ShowTech):
 
     def show_traffic(self):
         """Parser for show traffic"""
-        return json.dumps({'text': self.get_show_section('traffic')})
+        traffic = {}
+        section = ''
+        for line in self.get_show_section('traffic'):
+            if len(line):  #detects non indented line
+                if line == line.lstrip():
+                    section = line
+                else:
+                    if section not in traffic:  #add sub sections
+                        traffic[section] = []
+                        traffic[section].append(line)
+            else:
+                if section not in traffic:
+                    traffic[section] = {}
+
+                if 'received' in line:
+                    direction = 'receive'
+                elif 'transmitted' in line:
+                    direction = 'transmit'
+                else:
+                    if direction not in traffic[section]:
+                        traffic[section][direction] = []
+                    traffic[section][direction].append(line)
+        return json.dumps(traffic)
 
     def show_process(self):
         """Parser for show process"""
