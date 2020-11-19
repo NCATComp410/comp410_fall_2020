@@ -13,7 +13,7 @@ def run_demo():
     # Create an asa sh tech object
     primary_asa = ap.AsaParser(os.path.join(data_path, 'showtech_primary.txt'))
 
-
+    '''
     # show clock example
     print(primary_asa.clock())
     
@@ -42,10 +42,11 @@ def run_demo():
     
     # tech support license
     print(primary_asa.show_tech_support_license())
+    '''
 
     # cpu detailed
-    print(primary_asa.show_cpu_detailed())
-
+    print(primary_asa.show_cpu_detailed)
+    '''
     # cpu usage
     print(primary_asa.show_cpu_usage())
 
@@ -73,14 +74,14 @@ def run_demo():
 
     #show process
     print(primary_asa.show_process())
-
+   
 
     #show logging buffered
     print(primary_asa.show_logging_buffered())
 
     #show kernel process
     print(primary_asa.show_kernel_process())
-
+     '''
 
 if __name__ == "__main__":
     run_demo()
