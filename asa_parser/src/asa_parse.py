@@ -170,7 +170,13 @@ class AsaParser(ShowTech):
 
     def show_cpu_usage(self):
         """Parser for show cpu usage"""
-        return json.dumps({'text': self.get_show_section('cpu usage')})
+        usage = []
+        for line in self.get_show_section('cpu usage'):
+            if 'CPU ' in line:
+                data = line.split(';')
+                #print(data)
+            usage.append(data)
+        return json.dumps(usage)
 
     def show_memory_region(self):
         """Parser for show_memory region"""
@@ -298,7 +304,58 @@ class AsaParser(ShowTech):
 
     def show_memory_detail(self):
         memory_detail = []
-        return json.dumps({'text': self.get_show_section('memory detail')})
+        get_heap = False
+        total = False
+        get_mempool = False
+        get_fragmented = False
+        allocated_memory_stats = False
+        for line in self.get_show_section('memory detail'):
+            if "Heap" in line:
+                get_heap = True
+
+            if get_heap:
+                if '-' not in line:
+                    data = line.split(':')
+                    memory_detail.append({data[0].strip():data[1].strip()})
+            elif total:
+                data = line.split(':')
+                memory_detail.append({data[0].strip():data[1].strip()})
+                total = False
+
+            if get_mempool:
+                if '---' not in line:
+                    data = line.split("=")
+                memory_detail.append({data[0].strip():data[1].strip()})
+
+            if get_fragmented or allocated_memory_stats:
+                data = re.findall(r'\d+\**', line)
+                fragmented = {}
+                if data:
+                    fragmented['fragment size'] = data[0]
+                    fragmented['count'] = data[1]
+                    fragmented['total'] = data[2]
+                    memory_detail.append(fragmented)
+
+            if "MEMPOOL" in line or 'pool' in line:
+                get_mempool = True
+                allocated_memory_stats = False
+
+            if line.startswith('----- allocated'):
+                allocated_memory_stats = True
+                get_fragmented = False
+                memory_detail.append(fragmented)
+
+            if line.startswith('----- fragmented'):
+                get_fragmented = True
+
+            if '---' in line:
+                if get_heap:
+                    get_heap = False
+                    total = True
+                if get_mempool:
+                    get_mempool = False
+                continue
+        return json.dumps(memory_detail)
 
     def show_tech_support_detail(self):
         """Parser for show cpu detailed"""
@@ -306,7 +363,68 @@ class AsaParser(ShowTech):
 
     def show_context_details(self):
         """Parser for show context details"""
-        return json.dumps({'text': self.get_show_section('context detail')})
+        context = []
+
+        #Creating error for context details
+        for line in self.get_show_section('context detail'):
+            # Context "system", is a system resource
+            if line.startswith('Context "system",'):
+                sys = {'System': line.split('Context "system",')[1]}
+                context.append(sys)
+
+            if line.startswith('Context "admin",'):
+                ad = {'Admin': line.split('Context "admin",')[1]}
+                context.append(ad)
+
+            if line.startswith('Context "inside1",'):
+                in1 = {'Inside1': line.split('Context "inside1",')[1]}
+                context.append(in1)
+
+            if line.startswith('Context "inside2",'):
+                in2 = {'Inside2': line.split('Context "inside2",')[1]}
+                context.append(in2)
+
+            if line.startswith('Context "inside-6-7-9-10",'):
+                in6 = {'Inside6': line.split('Context "inside-6-7-9-10",')[1]}
+                context.append(in6)
+
+            if line.startswith('Context "inside2-6",'):
+                in26 = {'Inside2-6': line.split('Context "inside2-6",')[1]}
+                context.append(in26)
+
+            if line.startswith('Context "inside11",'):
+                in11 = {'Inside11': line.split('Context "inside11",')[1]}
+                context.append(in11)
+
+            if line.startswith('Context "inside13",'):
+                in13 = {'Inside13': line.split('Context "inside13",')[1]}
+                context.append(in13)
+
+            if line.startswith('Context "inside14",'):
+                in14 = {'Inside14': line.split('Context "inside14",')[1]}
+                context.append(in14)
+
+            if line.startswith('Context "inside4",'):
+                in4 = {'Inside4': line.split('Context "inside4",')[1]}
+                context.append(in4)
+
+            if line.startswith('Context "inside2-1",'):
+                in21 = {'Inside2-1': line.split('Context "inside2-1",')[1]}
+                context.append(in21)
+
+            if line.startswith('Context "inside2-2",'):
+                in22 = {'Inside2-2': line.split('Context "inside2-2",')[1]}
+                context.append(in22)
+
+            if line.startswith('Context "inside2-4",'):
+                in24 = {'Inside2-4': line.split('Context "inside2-4",')[1]}
+                context.append(in24)
+
+            if line.startswith('Context "null",'):
+                null = {'Null': line.split('Context "null",')[1]}
+                context.append(null)
+
+        return json.dumps(context)
 
     def show_interface(self):
         """Parser for show interface"""

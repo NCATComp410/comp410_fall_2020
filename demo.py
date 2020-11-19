@@ -37,6 +37,7 @@ def run_demo():
     df = pd.read_json(primary_asa.startup_config_errors())
     print('Startup config errors')
     # show unique values in StarInfo
+    df.to_csv("hello.csv")
     print(df['CriticalError'].unique())
 
     
@@ -66,11 +67,12 @@ def run_demo():
     print(primary_asa.show_traffic())
 
     #show memory
-    print(primary_asa.show_memory())
+    df = pd.read_json(primary_asa.show_memory())
+    print(df['Used memory'].unique())
 
     #show memory detail
-    print(primary_asa.show_memory_detail())
-
+    df = pd.read_json(primary_asa.show_memory_detail())
+    print(df['Free memory'].unique())
 
     #show process
     print(primary_asa.show_process())

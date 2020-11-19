@@ -113,8 +113,10 @@ class ParserTest(unittest.TestCase):
     def test_cpu_usage(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_usage.txt'))
         result = asa.show_cpu_usage()
-        self.assertIn('"text":', result)
-        self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
+        self.assertIn('CPU utilization for 5 seconds', result)
+        self.assertIn('1 minute', result)
+        self.assertIn('5 minutes', result)
+        #self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
 
     def test_memory_region(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
@@ -154,8 +156,21 @@ class ParserTest(unittest.TestCase):
     def test_context_details(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
         result = asa.show_context_details()
-        self.assertIn('"text":', result)
-        self.assertIn('["Context \\"system\\", is a system resource"', result)
+        self.assertIn('System', result)
+        self.assertIn('Admin', result)
+        self.assertIn('Inside1', result)
+        self.assertIn('Inside2', result)
+        self.assertIn('Inside6', result)
+        self.assertIn('Inside2-6', result)
+        self.assertIn('Inside11', result)
+        self.assertIn('Inside13', result)
+        self.assertIn('Inside14', result)
+        self.assertIn('Inside4', result)
+        self.assertIn('Inside2-1', result)
+        self.assertIn('Inside2-2', result)
+        self.assertIn('Inside2-4', result)
+        self.assertIn('Null', result)
+
 
     def test_traffic(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
@@ -204,8 +219,18 @@ class ParserTest(unittest.TestCase):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_detail.txt'))
         result = asa.show_memory_detail()
         self.assertIn("Heap Memory", result)
-        self.assertIn('"text":', result)
-        self.assertIn('----- allocated memory statistics -----', result)
+        self.assertIn("Free Memory", result)
+        self.assertIn("System", result)
+        self.assertIn("Used Memory", result)
+        self.assertIn("1073741824", result)
+        self.assertIn('**', result)
+        self.assertIn('196608', result)
+        self.assertIn('2095616000', result)
+        self.assertIn('91520', result)
+        self.assertIn('116764672', result)
+        self.assertIn('730662368', result)
+        #self.assertIn('"text":', result)
+        #self.assertIn('----- allocated memory statistics -----', result)
 
     def test_show_process(self):
         self.assertEqual(True, True)
