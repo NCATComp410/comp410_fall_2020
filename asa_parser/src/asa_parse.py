@@ -204,10 +204,22 @@ class AsaParser(ShowTech):
 
     def show_memory(self):
         """Parser for show memory"""
-        return json.dumps({'text': self.get_show_section('memory')})
+        memory = [] #where all the show_memory information will be held
+        bucket = {} #holds informtion for one show memory section
+        for line in self.get_show_section("memory"):
+            if ('Total' in line):
+                data = line.split(':')
+                bucket[data[0]] = data[1].strip()
+                memory.append(bucket)
+                bucket = {} #After we get to total reset the dictoary
+            else:
+                if "%" in line:
+                    data = line.split(":")
+                    bucket[data[0]] = data[1].strip()
+        return json.dumps(memory)
 
     def show_memory_detail(self):
-        """Parsesr for show memory detail"""
+        memory_detail = []
         return json.dumps({'text': self.get_show_section('memory detail')})
 
     def show_tech_support_detail(self):

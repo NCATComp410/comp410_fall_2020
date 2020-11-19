@@ -79,7 +79,7 @@ def run_demo():
 
     #show kernel process
     print(primary_asa.show_kernel_process())
-    
+
 
 if __name__ == "__main__":
     run_demo()

@@ -188,8 +188,9 @@ class ParserTest(unittest.TestCase):
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
         result = asa.show_memory()
-        self.assertIn('"text":', result)
-        self.assertIn('["Free memory:        5318377472 bytes (34%)"', result)
+        self.assertIn('"Free memory":', result)
+        self.assertIn('"Used memory":', result)
+        self.assertIn('"Total memory":', result)
 
     def test_memory_detail(self):
         # create a new text file in the tests directory called show_memory_detail.txt
@@ -198,6 +199,7 @@ class ParserTest(unittest.TestCase):
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_detail.txt'))
         result = asa.show_memory_detail()
+        self.assertIn("Heap Memory", result)
         self.assertIn('"text":', result)
         self.assertIn('----- allocated memory statistics -----', result)
 
