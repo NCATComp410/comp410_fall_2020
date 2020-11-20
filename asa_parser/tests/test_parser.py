@@ -136,7 +136,7 @@ class ParserTest(unittest.TestCase):
         # showtech_primary.txt file.  This is done to separate testing functionality from the
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_detailed.txt'))
-        result = asa.show_cpu_detailed
+        result = asa.show_cpu_detailed()
 
         self.assertIn('"Break down of per-core data path versus control point cpu usage:Core 5 sec 1 min 5 min":',result)
         self.assertIn('"Current control point elapsed versus the maximum control point elapsed for":',result)

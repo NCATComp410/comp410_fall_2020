@@ -200,7 +200,7 @@ class AsaParser(ShowTech):
                 memory_region.append(mem)
         return json.dumps(memory_region)
 
-    @property
+
     def show_cpu_detailed(self):
         """
         Parser for show cpu detailed
@@ -210,7 +210,6 @@ class AsaParser(ShowTech):
         cpu_detailed = []
         #Dictionary to hold core data
         cores_data = {}
-
         breakdown = {}
         total_cpu_utilization = {}
         external_cpu_utilization = {}
@@ -220,18 +219,19 @@ class AsaParser(ShowTech):
         temp_string = ""
         present = False
         for line in self.get_show_section("cpu detailed"):
-            x = re.search("^Core\s?\d+",line)
+            x = re.search(r'^Core\s?\d+',line)
             present = bool(x)
-            if(present):
+            if present:
                 #Use the CORE and Number as the key for the dictionary
                 #The dictionary contains information about the core for 5 sec,1 min and 5 min
-                key = re.match("^Core\s+\d+",line).group()
+                key = re.match(r'^Core\s+\d+', line).group()
                 attributes = line.split(key)
-                cores_data[key] = re.sub("\s+"," ",attributes[1])
+                cores_data[key] = re.sub(r'\s+'," ",attributes[1])
             if prev_line.startswith("Break"):
-                temp_string = re.sub("\s+"," ",line)
+                temp_string = re.sub(r'\s+'," ",line)
                 temp_string = prev_line + temp_string
             elif prev_line.startswith("Current"):
+                breakdown = {temp_string: cores_data}
                 prev_line = re.sub(":", "", prev_line)
                 current_control_point = {prev_line: line.strip()}
             elif prev_line.startswith("CPU"):
@@ -242,7 +242,7 @@ class AsaParser(ShowTech):
                 total_cpu_utilization = {prev_line: line.strip()}
 
             prev_line = line
-        breakdown = {temp_string:cores_data}
+
         cpu_detailed.append(breakdown)
         cpu_detailed.append(current_control_point)
         cpu_detailed.append(external_cpu_utilization)
