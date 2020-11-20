@@ -79,6 +79,12 @@ def run_demo():
 
     #show logging buffered
     print(primary_asa.show_logging_buffered())
+    df = pd.read_json(primary_asa.show_logging_buffered())
+    # show unique values in StarInfo
+    print(df['Logging buffered'].unique())
+
+    # tech support license
+    print(primary_asa.show_tech_support_license())
 
     #show kernel process
     print(primary_asa.show_kernel_process())
