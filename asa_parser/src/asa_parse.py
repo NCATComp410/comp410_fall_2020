@@ -204,41 +204,41 @@ class AsaParser(ShowTech):
         """Parser for show cpu detailed"""
         return json.dumps({'text': self.get_show_section('cpu detailed')})
 
-    # def ipsec_stats(self):
-    #     #     """Parser for show ipsec stats"""
-    #     #     stats = []
-    #     #     headerinfo = ""
-    #     #     headerdict = {}
-    #     #     dict = {}
-    #     #     for line in self.get_show_section("ipsec stats"):
-    #     #         if(("Inbound" in line and not ': ' in line)  or ("Outbound" in line and not ': ' in line)):
-    #     #             if(headerinfo == "Inbound"):
-    #     #                 headerinfo = line.strip()
-    #     #                 stats.append(headerdict)
-    #     #                 dict = {}
-    #     #                 headerdict = {headerinfo : dict}
-    #     #
-    #     #             else:
-    #     #                 headerinfo = line.strip()
-    #     #                 headerdict = {headerinfo : dict}
-    #     #
-    #     #         elif(re.search("\s{2,}", line)):
-    #     #             if ': ' in line:
-    #     #               split_line = line.split(": ")
-    #     #               dict.update({split_line[0].strip() : split_line[1].strip()})
-    #     #
-    #     #         else:
-    #     #
-    #     #             if (headerinfo == "Outbound"):
-    #     #                 stats.append(headerdict)
-    #     #                 headerdict = {}
-    #     #                 dict = {}
-    #     #                 headerinfo = ""
-    #     #
-    #     #             if ': ' in line:
-    #     #                 split_line = line.split(": ")
-    #     #                 stats.append({split_line[0].strip(): split_line[1].strip()})
-    #     #     return json.dumps(stats)
+    def ipsec_stats(self):
+            """Parser for show ipsec stats"""
+            stats = []
+            headerinfo = ""
+            headerdict = {}
+            dict = {}
+            for line in self.get_show_section("ipsec stats"):
+                if(("Inbound" in line and not ': ' in line)  or ("Outbound" in line and not ': ' in line)):
+                    if(headerinfo == "Inbound"):
+                        headerinfo = line.strip()
+                        stats.append(headerdict)
+                        dict = {}
+                        headerdict = {headerinfo : dict}
+
+                    else:
+                        headerinfo = line.strip()
+                        headerdict = {headerinfo : dict}
+
+                elif(re.search("\s{2,}", line)):
+                    if ': ' in line:
+                      split_line = line.split(": ")
+                      dict.update({split_line[0].strip() : split_line[1].strip()})
+
+                else:
+
+                    if (headerinfo == "Outbound"):
+                        stats.append(headerdict)
+                        headerdict = {}
+                        dict = {}
+                        headerinfo = ""
+
+                    if ': ' in line:
+                        split_line = line.split(": ")
+                        stats.append({split_line[0].strip(): split_line[1].strip()})
+            return json.dumps(stats)
 
     def show_memory(self):
         """Parser for show memory"""
