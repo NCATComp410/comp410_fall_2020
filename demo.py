@@ -46,7 +46,7 @@ def run_demo():
 
 
     # cpu detailed
-    print(primary_asa.show_cpu_detailed)
+    print(primary_asa.show_cpu_detailed())
 
     # cpu usage
     print(primary_asa.show_cpu_usage())
