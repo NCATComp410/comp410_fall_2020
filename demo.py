@@ -6,15 +6,17 @@ import pandas as pd
 
 
 def run_demo():
+    
     # Find path to the data directory in this repo
     data_path = os.path.join(git.Repo('.', search_parent_directories=True).working_tree_dir, 'data')
 
     # Create an asa sh tech object
     primary_asa = ap.AsaParser(os.path.join(data_path, 'showtech_primary.txt'))
 
+
     # show clock example
     print(primary_asa.clock())
-
+    
     # show failover history example
     print(primary_asa.failover_history())
 
@@ -26,6 +28,7 @@ def run_demo():
 
 
 
+
     #show process cpu-hog
     print(primary_asa.show_process_cpu_hog())
 
@@ -33,8 +36,26 @@ def run_demo():
     # startup-config errors
     print(primary_asa.startup_config_errors())
 
+
+        
+    #show process cpu-hog in a dataframe
+    df = pd.read_json(primary_asa.show_process_cpu_hog())
+    print('Show Process Cpu Hog')
+    print(df['Process'].unique())
+
+    
+    # startup-config errors in a dataframe
+    df = pd.read_json(primary_asa.startup_config_errors())
+    print('Startup config errors')
+    # show unique values in StarInfo
+    df.to_csv("hello.csv")
+    print(df['CriticalError'].unique())
+
+    
+
     # tech support license
     print(primary_asa.show_tech_support_license())
+
 
     # cpu detailed
     print(primary_asa.show_cpu_detailed())
@@ -58,14 +79,20 @@ def run_demo():
     print(primary_asa.show_traffic())
 
     #show memory
-    print(primary_asa.show_memory())
+    df = pd.read_json(primary_asa.show_memory())
+    print(df['Used memory'].unique())
 
     #show memory detail
+
     print(primary_asa.show_memory_detail())
+    
+    df = pd.read_json(primary_asa.show_memory_detail())
+    print(df['Free memory'].unique())
+
 
     #show process
     print(primary_asa.show_process())
-
+   
 
 if __name__ == "__main__":
     run_demo()
