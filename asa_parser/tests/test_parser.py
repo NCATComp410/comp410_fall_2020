@@ -239,7 +239,6 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_show_logging_buffered(self):
-
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_logging_buffered.txt'))
         result = asa.show_logging_buffered()
         self.assertIn('"text":', result)
@@ -250,3 +249,8 @@ class ParserTest(unittest.TestCase):
         result = asa.show_tech_support_detail()
         self.assertIn('"text":', result)
         self.assertIn('["Cisco Adaptive Security Appliance Software Version 101.1(1)71 <system>"', result)
+
+    def test_show_resource_usage_counter_all_1(self):
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_resource_usage_counter_all_1.txt'))
+        result = asa.show_resource_usage_counter_all_1()
+        self.assertIn('Resource', result)
