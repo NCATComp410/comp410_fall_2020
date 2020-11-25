@@ -235,6 +235,11 @@ class ParserTest(unittest.TestCase):
     def test_show_process(self):
         self.assertEqual(True, True)
 
+        asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process.txt'))
+        result = asa.show_process()
+        self.assertIn('"text":', result)
+        self.assertIn('"Reading from flash..."', result)
+
     def test_show_kernel_process(self):
         self.assertEqual(True, True)
 
