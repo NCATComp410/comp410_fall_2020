@@ -224,10 +224,10 @@ class AsaParser(ShowTech):
 
             elif(re.search("\s{2,}", line)):
                   if ': ' in line:
-                  split_line = line.split(": ")
-                   dict.update({split_line[0].strip() : split_line[1].strip()})
+                      split_line = line.split(": ")
+                      dict.update({split_line[0].strip() : split_line[1].strip()})
 
-               else:
+            else:
 
                 if (headerinfo == "Outbound"):
                     stats.append(headerdict)
@@ -418,9 +418,11 @@ class AsaParser(ShowTech):
         """Parser for show show logging buffered"""
         logs = {}
         """regex to make sure logged information is in correct format"""
+        lineNum = 1
         for line in self.get_show_section('logging buffered'):
             regex = "\w+\s+\d+\s+\d{4}\s+\d+\:+\d+\:+\d+\s+KP-systest-admin\s+\:\s+%ASA-4-711004\:\s+Task ran for \d+\s+\w+\,+\s+Process = \w+\s*\w*\s*\w*\, PC = \w+\, Call stack = "
-            logs.append({'text:': re.search(regex, line, flags=0).group(0)})
+            logs.update({lineNum: re.search(regex, line, flags=0).group(0)})
+            lineNum+=1
 
         return json.dumps(logs)
 
