@@ -103,7 +103,7 @@ class AsaParser(ShowTech):
 
         # parse each line from the show tech section
         # one line at a time
-        for line in self.get_show_section('show resource usage counter all 1'):
+        for line in self.get_show_section('resource usage counter all 1'):
             if len(line):
                 print(line)
                 info = re.split(r'\s+', line)
