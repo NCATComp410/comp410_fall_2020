@@ -44,6 +44,7 @@ def run_demo():
     # tech support license
     print(primary_asa.show_tech_support_license())
 
+
     # cpu detailed
     print(primary_asa.show_cpu_detailed())
 
@@ -75,7 +76,7 @@ def run_demo():
 
     #show process
     print(primary_asa.show_process())
-
+   
 
     #show logging buffered
     print(primary_asa.show_logging_buffered())
