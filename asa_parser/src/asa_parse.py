@@ -46,7 +46,6 @@ class AsaParser(ShowTech):
         # parse each line from the show tech section
         # one line at a time
         for line in self.get_show_section('process cpu-hog'):
-
             if line.startswith('Process:'):
                 errs = {'Process': line.split('Process:')[1].strip()}
                 config_errors.append(errs)
