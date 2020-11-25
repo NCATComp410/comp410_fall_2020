@@ -9,7 +9,6 @@ class ParserTest(unittest.TestCase):
     txt_path = os.path.join(txt_path, 'tests')
 
     def test_show_clock(self):
-
         # This is the expected value
         expected = '{"timestamp": ["12:40:33.800 UTC Wed Aug 16 2017"]}'
 
@@ -143,8 +142,6 @@ class ParserTest(unittest.TestCase):
         self.assertIn('"CPU utilization of external processes for":', result)
         self.assertIn('"Total CPU utilization for":', result)
 
-
-
     def test_ipsec_stats(self):
         asa = ap.AsaParser(os.path.join(self.txt_path,'show_ipsec_stats.txt'))
         result = asa.ipsec_stats()
@@ -171,7 +168,6 @@ class ParserTest(unittest.TestCase):
         self.assertIn('Inside2-4', result)
         self.assertIn('Null', result)
 
-
     def test_traffic(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
         # this file will contain only the "show cpu detailed" section from the main
@@ -189,6 +185,7 @@ class ParserTest(unittest.TestCase):
         self.assertIn('"outside3:"', result)
         self.assertIn('"inside-6-7-9-10:"', result)
         self.assertIn('"outside-6-7-9-10:"', result)
+
     def test_interface(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
         # this file will contain only the "show cpu detailed" section from the main
@@ -233,12 +230,10 @@ class ParserTest(unittest.TestCase):
         #self.assertIn('----- allocated memory statistics -----', result)
 
     def test_show_process(self):
-        self.assertEqual(True, True)
-
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_process.txt'))
         result = asa.show_process()
         self.assertIn('"text":', result)
-        self.assertIn('"Reading from flash..."', result)
+        self.assertIn('"Hardware:   FPR-2130"', result)
 
     def test_show_kernel_process(self):
         self.assertEqual(True, True)
