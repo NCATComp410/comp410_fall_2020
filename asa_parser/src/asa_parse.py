@@ -477,7 +477,7 @@ class AsaParser(ShowTech):
         # one line at a time
         for line in self.get_show_section('resource usage counter all 1'):
             if len(line):
-                print(line)
+                # print(line)
                 info = re.split(r'\s+', line)
                 data = {'Resource': info[0],
                         'Current': info[1],
