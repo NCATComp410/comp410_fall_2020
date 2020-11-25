@@ -99,27 +99,24 @@ class ParserTest(unittest.TestCase):
         self.assertIn('"Error": "that configuration and then add the new configuration"', result)
 
     def test_tech_support_license(self):
-        self.assertEqual(True, True)
-        # create a new text file in the tests directory called show_startup_config_errors.txt
-        # this file will contain only the "show tech-support license" section from the main
-        # showtech_primary.txt file.  This is done to separate testing functionality from the
-        # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_tech_support_license.txt'))
         result = asa.show_tech_support_license()
-
-        # execute the parser and get the result
-        # for now this will simply be a list of all the text in the section
-        # the return is in JSON format
-        self.assertIn('"text":', result)
-
-        # make sure the text section appears in the JSON returns
-        self.assertIn('["Smart Licensing Tech Support info"', result)
+        self.assertIn('Registration:', result)
+        self.assertIn('Handle:', result)
+        self.assertIn('License:', result)
+        self.assertIn('Description:', result)
+        self.assertIn('Count:', result)
+        self.assertIn('Version:', result)
+        self.assertIn('Status:', result)
+        self.assertIn('Reservation', result)
 
     def test_cpu_usage(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_usage.txt'))
         result = asa.show_cpu_usage()
-        self.assertIn('"text":', result)
-        self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
+        self.assertIn('CPU utilization for 5 seconds', result)
+        self.assertIn('1 minute', result)
+        self.assertIn('5 minutes', result)
+        #self.assertIn('["CPU utilization for 5 seconds = 1%; 1 minute: 10%; 5 minutes: 52%"', result)
 
     def test_memory_region(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_region.txt'))
@@ -139,36 +136,59 @@ class ParserTest(unittest.TestCase):
         # showtech_primary.txt file.  This is done to separate testing functionality from the
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_cpu_detailed.txt'))
-
         result = asa.show_cpu_detailed()
 
-        self.assertIn('"text":', result)
+        self.assertIn('"Break down of per-core data path versus control point cpu usage:Core 5 sec 1 min 5 min":',result)
+        self.assertIn('"Current control point elapsed versus the maximum control point elapsed for":',result)
+        self.assertIn('"CPU utilization of external processes for":', result)
+        self.assertIn('"Total CPU utilization for":', result)
 
-        self.assertIn('["Break down of per-core data path versus control point cpu usage:"', result)
+
 
     def test_ipsec_stats(self):
         asa = ap.AsaParser(os.path.join(self.txt_path,'show_ipsec_stats.txt'))
         result = asa.ipsec_stats()
-        self.assertIn('"text":', result)
-        self.assertIn('["IPsec Global Statistics"', result)
+        self.assertIn('Outbound', result)
+        self.assertIn('Inbound', result)
+        self.assertIn('"Protocol failures": "0"', result)
+        self.assertIn('"Invalid ICMP Errors rcvd": "0"', result)
 
     def test_context_details(self):
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_context_detail.txt'))
         result = asa.show_context_details()
-        self.assertIn('"text":', result)
-        self.assertIn('["Context \\"system\\", is a system resource"', result)
+        self.assertIn('System', result)
+        self.assertIn('Admin', result)
+        self.assertIn('Inside1', result)
+        self.assertIn('Inside2', result)
+        self.assertIn('Inside6', result)
+        self.assertIn('Inside2-6', result)
+        self.assertIn('Inside11', result)
+        self.assertIn('Inside13', result)
+        self.assertIn('Inside14', result)
+        self.assertIn('Inside4', result)
+        self.assertIn('Inside2-1', result)
+        self.assertIn('Inside2-2', result)
+        self.assertIn('Inside2-4', result)
+        self.assertIn('Null', result)
+
 
     def test_traffic(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
         # this file will contain only the "show cpu detailed" section from the main
         # showtech_primary.txt file.  This is done to separate testing functionality from the
         # main production functionality.
-        self.assertEqual(True, True)
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_traffic.txt'))
         result = asa.show_traffic()
-        self.assertIn('"text":', result)
-        self.assertIn('["nlp_int_tap:"', result)
-
+        self.assertIn('"nlp_int_tap:"', result)
+        self.assertIn('"diagnostic:"', result)
+        self.assertIn('"inside13:"', result)
+        self.assertIn('"outside13:"', result)
+        self.assertIn('"inside1:"', result)
+        self.assertIn('"outside1:"', result)
+        self.assertIn('"inside2:"', result)
+        self.assertIn('"outside3:"', result)
+        self.assertIn('"inside-6-7-9-10:"', result)
+        self.assertIn('"outside-6-7-9-10:"', result)
     def test_interface(self):
         # create a new text file in the tests directory called show_cpu_detailed.txt
         # this file will contain only the "show cpu detailed" section from the main
@@ -187,8 +207,9 @@ class ParserTest(unittest.TestCase):
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory.txt'))
         result = asa.show_memory()
-        self.assertIn('"text":', result)
-        self.assertIn('["Free memory:        5318377472 bytes (34%)"', result)
+        self.assertIn('"Free memory":', result)
+        self.assertIn('"Used memory":', result)
+        self.assertIn('"Total memory":', result)
 
     def test_memory_detail(self):
         # create a new text file in the tests directory called show_memory_detail.txt
@@ -197,8 +218,19 @@ class ParserTest(unittest.TestCase):
         # main production functionality.
         asa = ap.AsaParser(os.path.join(self.txt_path, 'show_memory_detail.txt'))
         result = asa.show_memory_detail()
-        self.assertIn('"text":', result)
-        self.assertIn('----- allocated memory statistics -----', result)
+        self.assertIn("Heap Memory", result)
+        self.assertIn("Free Memory", result)
+        self.assertIn("System", result)
+        self.assertIn("Used Memory", result)
+        self.assertIn("1073741824", result)
+        self.assertIn('**', result)
+        self.assertIn('196608', result)
+        self.assertIn('2095616000', result)
+        self.assertIn('91520', result)
+        self.assertIn('116764672', result)
+        self.assertIn('730662368', result)
+        #self.assertIn('"text":', result)
+        #self.assertIn('----- allocated memory statistics -----', result)
 
     def test_show_process(self):
         self.assertEqual(True, True)

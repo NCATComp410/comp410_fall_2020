@@ -13,6 +13,7 @@ def run_demo():
     # Create an asa sh tech object
     primary_asa = ap.AsaParser(os.path.join(data_path, 'showtech_primary.txt'))
 
+
     # show clock example
     print(primary_asa.clock())
     
@@ -36,11 +37,13 @@ def run_demo():
     df = pd.read_json(primary_asa.startup_config_errors())
     print('Startup config errors')
     # show unique values in StarInfo
+    df.to_csv("hello.csv")
     print(df['CriticalError'].unique())
 
     
     # tech support license
     print(primary_asa.show_tech_support_license())
+
 
     # cpu detailed
     print(primary_asa.show_cpu_detailed())
@@ -64,22 +67,23 @@ def run_demo():
     print(primary_asa.show_traffic())
 
     #show memory
-    print(primary_asa.show_memory())
+    df = pd.read_json(primary_asa.show_memory())
+    print(df['Used memory'].unique())
 
     #show memory detail
-    print(primary_asa.show_memory_detail())
-
+    df = pd.read_json(primary_asa.show_memory_detail())
+    print(df['Free memory'].unique())
 
     #show process
     print(primary_asa.show_process())
-
+   
 
     #show logging buffered
     print(primary_asa.show_logging_buffered())
 
     #show kernel process
     print(primary_asa.show_kernel_process())
-    
+
 
 if __name__ == "__main__":
     run_demo()
