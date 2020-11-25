@@ -26,6 +26,17 @@ def run_demo():
     print(df['Reason'].value_counts())
     print('Demo Message')
 
+
+
+
+    #show process cpu-hog
+    print(primary_asa.show_process_cpu_hog())
+
+
+    # startup-config errors
+    print(primary_asa.startup_config_errors())
+
+
         
     #show process cpu-hog in a dataframe
     df = pd.read_json(primary_asa.show_process_cpu_hog())
@@ -41,6 +52,7 @@ def run_demo():
     print(df['CriticalError'].unique())
 
     
+
     # tech support license
     print(primary_asa.show_tech_support_license())
 
@@ -71,19 +83,16 @@ def run_demo():
     print(df['Used memory'].unique())
 
     #show memory detail
+
+    print(primary_asa.show_memory_detail())
+    
     df = pd.read_json(primary_asa.show_memory_detail())
     print(df['Free memory'].unique())
+
 
     #show process
     print(primary_asa.show_process())
    
-
-    #show logging buffered
-    print(primary_asa.show_logging_buffered())
-
-    #show kernel process
-    print(primary_asa.show_kernel_process())
-
 
 if __name__ == "__main__":
     run_demo()
